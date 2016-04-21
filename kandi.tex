@@ -1,0 +1,133 @@
+\documentclass[12pt,a4paper,leqno]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[finnish]{babel}
+\usepackage{amsthm}
+\usepackage{amsfonts}         
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\No}{\mathbb{N}_0}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\X}{\mathrm{X}}
+\newcommand{\Pow}{\mathbb{P}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\diam}{\operatorname{diam}}
+
+\theoremstyle{plain}
+\newtheorem{lause}[equation]{Lause}
+\newtheorem{lem}[equation]{Lemma}
+\newtheorem{prop}[equation]{Propositio}
+\newtheorem{kor}[equation]{Korollaari}
+
+\theoremstyle{definition}
+\newtheorem{maar}[equation]{Määritelmä}
+\newtheorem{konj}[equation]{Konjektuuri}
+\newtheorem{esim}[equation]{Esimerkki}
+
+\theoremstyle{remark}
+\newtheorem{huom}[equation]{Huomautus}
+
+\pagestyle{plain}
+\setcounter{page}{1}
+\addtolength{\hoffset}{-1.15cm}
+\addtolength{\textwidth}{2.3cm}
+\addtolength{\voffset}{0.45cm}
+\addtolength{\textheight}{-0.9cm}
+
+\title{Kandi}
+\author{Joni Hanski}
+\date{20.4.2016}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Johdanto}\label{johd}
+
+Kandissamme haluamme osoittaa metrisissä avaruuksissa sulkeuman karakterisoinnin jonon raja-arvojen avulla yleistyvän yleisiin topologisiin avaruuksiin käyttämällä jonojen sijaan konstruktiota \textbf{suunnattu verkko}. Kandi kuuluu topologian alaan, ja suurimmaksi osaksi sisältyy kurssiin Topologia II.
+
+Osoitamme aluksi miten metrisessä avaruudessa sulkeuma voidaan karakterisoida jonojen raja-arvojen avulla, ja tämän jälkeen tutkimme ei-metrisen avaruuden tapausta jossa sama tulos ei enää päde. Tämän jälkeen johdamme suunnattuja verkkoja käyttävän tuloksen yleisiin topologisiin avaruuksiin, ja näytämme kuinka tämä määrittely johtaa eri lopputulokseen esimerkkitapauksessamme.
+
+\chapter{Topologia}\label{TOP}
+
+Topologian avulla voidaan puhua avaruuden rakenteesta. Tietyllä tapaa topologia kuvaa sitä, kuinka lähellä tai kaukana pisteet ovat toisistaan.
+
+\begin{maar}\label{topmaar}
+\emph{Topologia}. Olkoon $\X$ avaruus ja $\T \subset \Pow(\X)$ joukon $\X$ osajoukkojen joukko. Sanomme, että $\T$ on joukon $\X$ \emph{topologia}, mikäli seuraavat ehdot pätevät:
+
+(T1) $\T$ sisältää osajoukkojensa mielivaltaiset yhdisteet
+
+(T2) Jos $A,B \in \T$, niin $A \cap B \in \T$
+
+(T3) $\X, \varnothing \in \T$
+\end{maar}
+
+Jos joukolle $\X$ on määrätty topologia $\T$, sanomme että $\X$ on \emph{topologinen avaruus}.
+
+Jos joukko $A \subset \X$ kuuluu avaruuden $\X$ topologiaan $\T$, sanomme että joukko $A$ on $\T$-\emph{avoin}, tai lyhyesti \emph{avoin}, mikäli topologia on asiayhteydestä selvä. Mikäli joukon $A \subset \X$ komplementti $\X \setminus A$ on avoin, sanomme että A on \emph{suljettu}. Joukko voi olla avoin, suljettu, molemmat tai ei kumpikaan. Esimerkiksi koko avaruus $\X$ on aina sekä avoin että suljettu.
+
+Oletamme tästedes, että $\X$ on topologinen avaruus.
+
+\begin{maar}\label{ymp}
+\emph{Ympäristö}. Olkoon $x \in \X$ ja $A \subset \X$. Sanomme että $A$ on pisteen $x$ \emph{ympäristö}, mikäli $A$ on avoin ja $x \in A$.
+\end{maar}
+
+\begin{maar}\label{sulk}
+\emph{Sulkeuma}. Joukon $A \subset \X$ \emph{sulkeuma} määritellään niiden pisteiden joukkona, joiden jokainen ympäristö leikkaa joukon $A$.
+\begin{equation}
+\overline{A} = \text{sulkeuma }A = \{ x \in \X \mid \text{jos } x \in U \in \T \text{ pätee } U \cap A \not= \varnothing \}
+\end{equation}
+\end{maar}
+
+Joukon $A$ sulkeuma on suljettu, ja sisältyy jokaiseen suljettuun joukkoon joka sisältää joukon $A$. Intuitiivisesti tämä seuraa siitä, että sulkeuman komplementti on yhdiste kaikista avoimista joukoista jotka eivät leikkaa joukkoa $A$.
+
+\begin{maar}\label{kantamaar}
+\emph{Kanta}. Käytännössä voi olla hankala listata jokainen tietyn topologian avoin joukko määritellessä topologiaa. Tämän sijaan usein puhutaan rajatummasta joukosta avoimia joukkoja, jotka yksikäsitteisesti määräävät topologian. Joukko $\B \subset \Pow(\X)$ on topologian \emph{kanta} joukossa $\X$, mikäli seuraavat ehdot pätevät:
+
+(K0) $\varnothing \in \B$.
+
+(K1) $\bigcup_{B \in \B} B = \X$.
+
+(K2) Jos $x \in B_1 \cap B_2$ ja $B_1,B_2\in \B$, tällöin on olemassa $B \in \B$ siten, että $x \in B \subset B_1 \cap B_2$.
+\end{maar}
+
+Joukko $U \subset \X$ kuuluu kannan $\B$ määräämään topologiaan jos ja vain jos $U$ on jokin yhdiste kannan alkioista.
+
+\chapter{Metrinen avaruus}\label{MET}
+
+Metrisen avaruuden keskeinen käsite on metriikka, joka pyrkii formalisoimaan etäisyyden käsitteen. Kandin aiheen kannalta erityisen huomionarvoista on se, että metriikka määrää yksiselitteisesti avaruudelle luonnollisen topologian.
+
+\begin{maar}\label{metmaar}
+\emph{Metriikka}. Joukossa $\X$ määritelty funktio $d : \X \times \X \to \R$ on \emph{metriikka} joukossa $X$ jos pätee
+
+(M1) Kaikilla $a, b \in \X$ pätee $d(a,b) \geq 0$.
+
+(M2) $d(a,b) = 0$ jos ja vain jos $a = b$.
+
+(M3) (Kolmioepäyhtälö) Kaikilla $a, b, c \in \X$ pätee $d(a,c) \leq d(a,b) + d(b,c)$.
+\end{maar}
+
+\begin{maar}\label{pallomar}
+\emph{Palloympäristö}. Pisteen $x \in \X$ $r$-säteinen \emph{palloympäristö} on joukko $B(x,r) = \{ y \in \X \mid d(x, y) < r \}$.
+\end{maar}
+
+Metriselle avaruudelle on hyvin luonnollista määrätä topologia käyttämällä kantana avaruuden eri palloympäristöjä. Jos siis $\X$ on metrinen avaruus, sen kannaksi valitaan $\B = \{ B(x,r) \mid x \in \X, r \in \R \}$. Kutsumme kannan $\B$ määräämää topologiaa nyt \emph{metriikan indusoimaksi topologiaksi} joukossa $\X$.
+
+\chapter{Sulkeuman karakterisointi jonojen avulla}
+
+\begin{thebibliography}{9}
+
+\bibitem{Topo}
+Jussi Väisälä: Topologia II
+\end{thebibliography}
+
+\end{document}
