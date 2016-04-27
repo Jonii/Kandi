@@ -18,6 +18,7 @@
 \newcommand{\Pow}{\mathbb{P}}
 \newcommand{\B}{\mathcal{B}}
 \newcommand{\T}{\mathcal{T}}
+\newcommand{\I}{\mathrm{I}}
 \newcommand{\diam}{\operatorname{diam}}
 
 \theoremstyle{plain}
@@ -106,7 +107,10 @@ Joukko $U \subset \X$ kuuluu kannan $\B$ määräämään topologiaan jos ja vai
 
 Metrisen avaruuden keskeinen käsite on metriikka, joka pyrkii formalisoimaan etäisyyden käsitteen. Kandin aiheen kannalta erityisen huomionarvoista on se, että metriikka määrää yksiselitteisesti avaruudelle luonnollisen topologian.
 
-\begin{maar}\label{metmaar}
+\begin{maar}\label{metmaar}egation.
+De Morgans Law of Set Theory Proof - Math Theorems
+Statement:
+ 
 \emph{Metriikka}. Joukossa $\X$ määritelty funktio $d : \X \times \X \to \R$ on \emph{metriikka} joukossa $X$ jos pätee
 
 (M1) Kaikilla $a, b \in \X$ pätee $d(a,b) \geq 0$.
@@ -123,6 +127,49 @@ Metrisen avaruuden keskeinen käsite on metriikka, joka pyrkii formalisoimaan et
 Metriselle avaruudelle on hyvin luonnollista määrätä topologia käyttämällä kantana avaruuden eri palloympäristöjä. Jos siis $\X$ on metrinen avaruus, sen kannaksi valitaan $\B = \{ B(x,r) \mid x \in \X, r \in \R \}$. Kutsumme kannan $\B$ määräämää topologiaa nyt \emph{metriikan indusoimaksi topologiaksi} joukossa $\X$.
 
 \chapter{Sulkeuman karakterisointi jonojen avulla}
+
+Palautetaan ensin mieleen jonon määritelmä. Sanomme, että kuvaus $x : \N \to \X$ on jono avaruudessa $\X$, ja merkitsemme $x_n := x(n)$. Erityisesti jonon suppeneminen ja raja-arvo on työmme kannalta keskeistä.
+
+\begin{maar}\label{jonosupmaar}
+\emph{Jonon suppeneminen}. Olkoon $\X$ topologinen avaruus, ja olkoon $a$ jono avaruudessa $\X$. Sanomme, että jono \emph{suppenee} kohti pistettä $x$, mikäli jokaista pisteen $x$ ympäristöä $U \subset \X$ kohti voidaan valita jonon $a$ indeksi $n_U$ siten, että kaikilla $n > n_U$ pätee $a_n \in U$. Tiettyjen ehtojen pätiessä avaruuden jono voi supeta vain yhtä pistettä kohti. Tällöin jos jono suppenee kohti pistettä $x$, voimme sanoa että $x$ on jonon \emph{raja-arvo}.
+\end{maar}
+
+Todistamatta mainitsemme että metrisessä avaruudessa jono voi supeta vain yhtä pistettä kohti.
+
+Metrisessä avaruudessa voimme nyt osoittaa, että joukon $A$ jonojen raja-arvojen joukko on sama kuin joukon $A$ sulkeuma. Tämä tarkoittaa, että piste $x$ kuuluu joukon $A$ sulkeumaan jos ja vain jos on sellainen jono $a : \N \to A$ että tämän raja-arvo on $x$. Tämän osoittamiseksi... TODO
+
+\chapter{Erikoinen ei-metrinen avaruus}
+Aiemmin huomasimme että metrisessä avaruudessa jonon raja-arvojen avulla voidaan määrittää sulkeuma. Nyt tutkimme ei-metristä avaruutta jossa tämä karakterisointi ei päde.
+
+Olkoon $\R$ avaruus, jossa topologian $\T$ määrittelee seuraava ehto:
+
+\begin{equation}
+\T = \{U \subset \R \mid \R \setminus U \text{ on numeroituva} \} \cup \{ \varnothing \}
+\end{equation}
+
+Osoitamme ensin että $\T$ määrää topologian.
+
+Ehdot 1 ja 2 voidaan osoittaa De Morganin laeilla, eli 
+
+\begin{align}
+(A \cap B)^C &= A^C \cup B^C \\
+(A \cup B)^C &= A^C \cap B^C
+\end{align}
+
+Ehdon 1 kohdalla huomaamme että jos joukon $A$ komplementti on numeroituva, tällöin yhdisteen $A \cup B$ komplementti sisältyy joukon $A$ komplementtiin. Toisaalta ehto 2 toteutuu kun huomaamme että kahden numeroituvan joukon yhdiste on yhä numeroituva, eli kahden joukon leikkauksen komplementti on yhä numeroituva jos molempien alkuperäisten joukkojen komplementti oli numeroituva.
+
+Ehto 3 toteutuu selvästi.
+
+Tutkitaan erityisesti yksikköväliä $\I = [0,1]$. Joukon $\I$ sulkeuma osoittautuu olevan koko avaruus $\X$. Tämän osoittamiseksi teemme vastaoletuksen, eli oletamme että löytyy $x \in \X$ joka ei kuulu joukon $\I$ sulkeumaan. Tällöin pisteellä $x$ on ainakin yksi ympäristö $U \subset \X$ joka ei leikkaa joukkoa $\I$. Tällöin $\I \subset U^C$. Koska tästä seuraisi että $U^C$ on ylinumeroituva, tämä on ristiriita, eli vastaoletuksemme oli väärä.
+
+Toisaalta voimme osoittaa että jos $x \in \R$ ja $x \not\in \I$, mikään joukon $\I$ jono ei suppene kohti pistettä $x$. Teemme jälleen vastaoletuksen, eli että löytyy jono $a$ joukossa $\I$ joka suppenee kohti pistettä $x$.
+
+Nyt voimme valita pisteelle $x$ ympäristön $U \subset \R$ siten, että
+\begin{equation}
+U = \R \setminus \{x \in \R \mid a_i = x \text{ jollain } i \in \N \}
+\end{equation}
+
+Selvästi tämä joukko on avoin, koska tämän sulkeuma on jonon arvojoukko. Selvästi joukko $U$ myös sisältää pisteen $x$, sillä jonon arvot jäävät joukkoon $\I$ mutta $x \not\in \I$. Täten $U$ on pisteen $x$ ympäristö, ja toisaalta myös selvästi jono ei ikinä saa arvoja tässä joukossa. 
 
 \begin{thebibliography}{9}
 
