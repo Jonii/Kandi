@@ -19,7 +19,9 @@
 \newcommand{\B}{\mathcal{B}}
 \newcommand{\T}{\mathcal{T}}
 \newcommand{\I}{\mathrm{I}}
+\newcommand{\D}{\mathcal{D}}
 \newcommand{\diam}{\operatorname{diam}}
+\newcommand{\verkop}{\leq}
 
 \theoremstyle{plain}
 \newtheorem{lause}[equation]{Lause}
@@ -169,7 +171,37 @@ Nyt voimme valita pisteelle $x$ ympäristön $U \subset \R$ siten, että
 U = \R \setminus \{x \in \R \mid a_i = x \text{ jollain } i \in \N \}
 \end{equation}
 
-Selvästi tämä joukko on avoin, koska tämän sulkeuma on jonon arvojoukko. Selvästi joukko $U$ myös sisältää pisteen $x$, sillä jonon arvot jäävät joukkoon $\I$ mutta $x \not\in \I$. Täten $U$ on pisteen $x$ ympäristö, ja toisaalta myös selvästi jono ei ikinä saa arvoja tässä joukossa. 
+Selvästi tämä joukko on avoin, koska tämän sulkeuma on jonon arvojoukko. Selvästi joukko $U$ myös sisältää pisteen $x$, sillä jonon arvot jäävät joukkoon $\I$ mutta $x \not\in \I$. Täten $U$ on pisteen $x$ ympäristö, ja toisaalta myös selvästi jonon alkiot eivät ikinä sisälly tähän joukkoon. Koska jonon suppeneminen vaatii että jokaiselle pisteen $x$ ympäristölle pätee että ennen pitkään jono saa arvonsa tässä joukossa, saamme ristiriidan, eli jonomme ei suppene kohti pistettä $x$. Koska emme tehneet mitään oletuksia jonosta, saamme että mikään yksikkövälin $\I$ jono ei suppene kohti pistettä $x$.
+
+Täten sulkeuma on tässä merkillisessä avaruudessamme laajempi kuin jonojen suppenemispisteet. Jotta saisimme kuvailtuja sulkeumaa suppenemisen kautta, meidän on käytettävä jonoja yleisempää käsitettä.
+
+\chapter{Verkko}
+
+Suunnattu verkko yleistää verkon käsitettä. Isolta osin verkon määritelmä vastaa jonon määritelmää, joten mainitsemme erikseen mikäli verkon ominaisuus poikkeaa jonosta.
+
+Jono on kuvaus luonnollisilta luvuilta $\N$ kohdeavaruuteen $\X$. Verkko sen sijaan ottaa lähtöavaruudekseen jonkin \emph{suunnatun joukon}. Suunnattu joukko on määritelty seuraavasti:
+
+\begin{maar}\label{suunjoukmaar}
+\emph{Suunnattu joukko}. Olkoon joukko $\X$ jokin joukko, jossa on määritelty relaatio $\verkop$ joka toteuttaa seuraavat ehdot:
+
+(V1) Jos $a, b, c \in \X$, ja $a \verkop b \verkop c$, tällöin $a \verkop c$ (transitiivisuus)
+
+(V2) Jos $a \in \X$, tällöin $a \verkop a$.
+
+(V3) Jos $a, b \in \X$, tällöin on olemassa $c \in \X$ siten, että $a \verkop c$ ja $b \verkop c$.
+
+Kutsumme paria $(\X, \verkop)$ \emph{suunnatuksi joukoksi}
+\end{maar}
+
+Ehto V3 erottaa tämän jonon määritelmästä. Toisin kuin luonnollisilla luvuilla, järjestyksemme on vain osittainen. Jos $a, b \in \X$, ei välttämättä päde $a \verkop b$ eikä $b \verkop a$. Ehto V3 kuitenkin antaa meille keinon puhua suppenemisesta liki identtisesti samalla tavoin kuin jonoilla.
+
+Olkoon $\D$ suunnattu joukko, ja olkoon $\X$ avaruus. Kuvaus $n : \D \to \X$ on avaruuden $\X$ \emph{verkko}.
+
+Osoittautuu että aiemmin käyttämämme määritelmä jonon suppenemiselle kelpaa lähes sellaisenaan verkon suppenemisen määrittelemiselle, korvaamalla jonon verkolla.
+
+\begin{maar}\label{verksupmaar}
+\emph{Verkon suppeneminen}. Olkoon $\X$ topologinen avaruus, ja $n$ avaruuden $\X$ verkko. Sanomme, että verkko \emph{suppenee} kohti pistettä $x$ mikäli jokaiselle pisteen $x$ ympäristölle $U$ löytyy joukon $\D$ alkio $d_U \in \D$ siten, että jos $d_U \verkop d$, tällöin $n(d) \in U$.  
+\end{maar}
 
 \begin{thebibliography}{9}
 
