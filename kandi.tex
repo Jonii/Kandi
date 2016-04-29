@@ -87,7 +87,7 @@ Oletamme tästedes, että $\X$ on topologinen avaruus.
 \begin{maar}\label{sulk}
 \emph{Sulkeuma}. Joukon $A \subset \X$ \emph{sulkeuma} määritellään niiden pisteiden joukkona, joiden jokainen ympäristö leikkaa joukon $A$.
 \begin{equation}
-\overline{A} = \text{sulkeuma }A = \{ x \in \X \mid \text{jos } x \in U \in \T \text{ pätee } U \cap A \not= \varnothing \}
+\overline{A} = \text{sulkeuma }A = \{ x \in \X \mid \text{jos } U \text{ on pisteen } x \text{ ympäristö, niin pätee } U \cap A \not= \varnothing \}
 \end{equation}
 \end{maar}
 
@@ -95,8 +95,6 @@ Joukon $A$ sulkeuma on suljettu, ja sisältyy jokaiseen suljettuun joukkoon joka
 
 \begin{maar}\label{kantamaar}
 \emph{Kanta}. Käytännössä voi olla hankala listata jokainen tietyn topologian avoin joukko määritellessä topologiaa. Tämän sijaan usein puhutaan rajatummasta joukosta avoimia joukkoja, jotka yksikäsitteisesti määräävät topologian. Joukko $\B \subset \Pow(\X)$ on topologian \emph{kanta} joukossa $\X$, mikäli seuraavat ehdot pätevät:
-
-(K0) $\varnothing \in \B$.
 
 (K1) $\bigcup_{B \in \B} B = \X$.
 
@@ -138,7 +136,13 @@ Palautetaan ensin mieleen jonon määritelmä. Sanomme, että kuvaus $x : \N \to
 
 Todistamatta mainitsemme että metrisessä avaruudessa jono voi supeta vain yhtä pistettä kohti.
 
-Metrisessä avaruudessa voimme nyt osoittaa, että joukon $A$ jonojen raja-arvojen joukko on sama kuin joukon $A$ sulkeuma. Tämä tarkoittaa, että piste $x$ kuuluu joukon $A$ sulkeumaan jos ja vain jos on sellainen jono $a : \N \to A$ että tämän raja-arvo on $x$. Tämän osoittamiseksi... TODO
+Metrisessä avaruudessa voimme nyt osoittaa, että joukon $A$ jonojen raja-arvojen joukko on sama kuin joukon $A$ sulkeuma. Tämä tarkoittaa, että piste $x$ kuuluu joukon $A$ sulkeumaan jos ja vain jos on sellainen jono $a : \N \to A$ että tämän raja-arvo on $x$. Todistuksessa on kaksi puolta.
+
+\emph{Kohta 1}. Osoitetaan, että jos jono $a : \N \to A$ suppenee kohti pistettä $x \in \X$, piste $x$ kuuluu joukon $A$ sulkeumaan.
+
+Sulkeuman määritelmän perusteella riittää osoittaa että jokaiselle pisteen $x$ ympäristölle $U \subset \X$ pätee, että $U \cap A \not= \varnothing$.
+
+TODO
 
 \chapter{Erikoinen ei-metrinen avaruus}
 Aiemmin huomasimme että metrisessä avaruudessa jonon raja-arvojen avulla voidaan määrittää sulkeuma. Nyt tutkimme ei-metristä avaruutta jossa tämä karakterisointi ei päde.
@@ -200,7 +204,7 @@ Olkoon $\D$ suunnattu joukko, ja olkoon $\X$ avaruus. Kuvaus $n : \D \to \X$ on 
 Osoittautuu että aiemmin käyttämämme määritelmä jonon suppenemiselle kelpaa lähes sellaisenaan verkon suppenemisen määrittelemiselle, korvaamalla jonon verkolla.
 
 \begin{maar}\label{verksupmaar}
-\emph{Verkon suppeneminen}. Olkoon $\X$ topologinen avaruus, ja $n$ avaruuden $\X$ verkko. Sanomme, että verkko \emph{suppenee} kohti pistettä $x$ mikäli jokaiselle pisteen $x$ ympäristölle $U$ löytyy joukon $\D$ alkio $d_U \in \D$ siten, että jos $d_U \verkop d$, tällöin $n(d) \in U$.  
+\emph{Verkon suppeneminen}. Olkoon $\X$ topologinen avaruus, ja $n$ avaruuden $\X$ verkko. Sanomme, että verkko \emph{suppenee} kohti pistettä $x$ mikäli jokaiselle pisteen $x$ ympäristölle $U$ löytyy joukon $\D$ alkio $d_U \in \D$ siten, että jos $d_U \verkop d$, tällöin $n(d) \in U$.
 \end{maar}
 
 \begin{thebibliography}{9}
