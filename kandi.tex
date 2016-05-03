@@ -199,13 +199,49 @@ Kutsumme paria $(\X, \verkop)$ \emph{suunnatuksi joukoksi}
 
 Ehto V3 erottaa tämän jonon määritelmästä. Toisin kuin luonnollisilla luvuilla, järjestyksemme on vain osittainen. Jos $a, b \in \X$, ei välttämättä päde $a \verkop b$ eikä $b \verkop a$. Ehto V3 kuitenkin antaa meille keinon puhua suppenemisesta liki identtisesti samalla tavoin kuin jonoilla.
 
-Olkoon $\D$ suunnattu joukko, ja olkoon $\X$ avaruus. Kuvaus $n : \D \to \X$ on avaruuden $\X$ \emph{verkko}.
+Olkoon $\D$ suunnattu joukko, ja olkoon $\X$ avaruus. Kuvaus $n : \D \to \X$ on avaruuden $\X$ \emph{verkko}. Mikäli kaikki verkon $n$ arvot kuuluvat avaruuden $\X$ osajoukkoon $A$, voimme sanoa että $n$ on verkko joukossa $A$.
 
 Osoittautuu että aiemmin käyttämämme määritelmä jonon suppenemiselle kelpaa lähes sellaisenaan verkon suppenemisen määrittelemiselle, korvaamalla jonon verkolla.
 
 \begin{maar}\label{verksupmaar}
 \emph{Verkon suppeneminen}. Olkoon $\X$ topologinen avaruus, ja $n$ avaruuden $\X$ verkko. Sanomme, että verkko \emph{suppenee} kohti pistettä $x$ mikäli jokaiselle pisteen $x$ ympäristölle $U$ löytyy joukon $\D$ alkio $d_U \in \D$ siten, että jos $d_U \verkop d$, tällöin $n(d) \in U$.
 \end{maar}
+
+Nyt voimme osoittaa että mielivaltaisessa topologisessa avaruudessa, piste kuuluu joukon sulkeumaan jos ja vain jos jokin tämän joukon verkko suppenee kohti tätä pistettä.
+
+\begin{lause}\label{verksulklause}
+Olkoon $\X$ avaruus, ja $A \subset \X$ tämän avaruuden osajoukko. Jos piste $x \in \X$ kuuluu joukon $A$ sulkeumaan, löytyy verkko $n : \D \to A$ joka suppenee kohti pistettä $x$, ja kääntäen, mikäli on olemassa verkko $n : \D \to A$ joka suppenee kohti pistettä $x$, tällöin $x \in \overline{A}$.
+\end{lause}
+
+\noindent\emph{Todistus}.
+
+\emph{Suunta $\leftarrow$}
+
+Olkoon $\X$ avaruus, $A \subset \X$ joukko ja $n : \D -> A$ verkko joka suppenee kohti pistettä $x \in \X$.
+
+\emph{Suunta $\to$}
+
+Olkoon $\X$ avaruus, $A \subset \X$ joukko ja $x \in \overline{A}$ joukon $A$ sulkeuman piste. Osoitamme että löytyy verkko $n : \D \to A$ joka suppenee kohti pistettä $x$.
+
+Määritellään joukko $\D$ seuraavasti:
+
+\begin{equation}
+\D = \{U \cap A \mid U \text{ on pisteen x ympäristö}\}
+\end{equation}
+
+Koska piste $x$ kuuluu joukon $A$ sulkeumaan, jokainen joukon $\D$ alkio on epätyhjä joukko. Voimme siis liittää jokaiseen joukon $\D$ alkioon jonkin pisteen $a_U \in A \cap U$. Voimme siis rakentaa kuvauksen $n : \D \to A, n(U) \in A \cap U$. Emme määrittele funktiota tuon tarkemmin, meille riittää tietää että jokaiselle alkiolle voidaan tämän ehdon toteuttava funktion arvo määrätä.
+
+Nyt voimme suunnata joukon $\D$ relaatiolla $\supseteq$. $\subseteq$ toteuttaa selvästi ehdot V1 ja V2. Ehto V3 seuraa siitä, että mikäli meillä on $D_1, D_2 \in \D$, tällöin $D_n$ on muotoa $A \cap U_n$, jossa $U_n$ on pisteen $x$ ympäristö. Topologian määritelmän ehdon T2 mukaan siis leikkaus $U_1 \cap U_2 =: U$ on myös avoin joukko. Toisaalta joukko $U$ sisältää pisteen $x$, eli $A \cap U \in \D =: A$ ja $A \subset A_1$ ja $A \subset A_2$.
+
+Funktio $n : \D \to A$ on siis verkko. Jäljellä on enää osoittaa että $n$ suppenee kohti pistettä $x$.
+
+Olkoon $U$ jokin pisteen $x$ ympäristö. Meidän on löydettävä joukon $\D$ alkio $d_U$ jolle pätee
+
+\begin{equation}
+\text{jos } d_U \supset d \text{, tällöin } n(d) \in U
+\end{equation}
+
+Tällainen alkio löytyy muodossa $d_U = A \cap U$. Jos jokin joukon $\D$ alkio $d$ sisältyy alkioon $d_U$, eli pätee $d_U \subseteq d$, tällöin piste $d$ on muotoa $d = V \cap A$, joten $V \subseteq U$. Täten $n(d) \in V \subset U$.
 
 \begin{thebibliography}{9}
 
