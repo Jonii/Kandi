@@ -46,7 +46,7 @@
 
 \title{Kandi}
 \author{Joni Hanski}
-\date{20.4.2016}
+\date{13.5.2016}
 
 \begin{document}
 
@@ -85,9 +85,9 @@ Oletamme tästedes, että $\X$ on topologinen avaruus.
 \end{maar}
 
 \begin{maar}\label{sulk}
-\emph{Sulkeuma}. Joukon $A \subset \X$ \emph{sulkeuma} määritellään niiden pisteiden joukkona, joiden jokainen ympäristö leikkaa joukon $A$.
+\emph{Sulkeuma}. Joukon $A \subset \X$ \emph{sulkeuma}, merkitään $\overline{A}$, määritellään niiden pisteiden joukkona, joiden jokainen ympäristö leikkaa joukon $A$.
 \begin{equation}
-\overline{A} = \text{sulkeuma }A = \{ x \in \X \mid \text{jos } U \text{ on pisteen } x \text{ ympäristö, niin pätee } U \cap A \not= \varnothing \}
+\overline{A} = \{ x \in \X \mid \text{jos } U \text{ on pisteen } x \text{ ympäristö, niin pätee } U \cap A \not= \varnothing \}
 \end{equation}
 \end{maar}
 
@@ -101,17 +101,14 @@ Joukon $A$ sulkeuma on suljettu, ja sisältyy jokaiseen suljettuun joukkoon joka
 (K2) Jos $x \in B_1 \cap B_2$ ja $B_1,B_2\in \B$, tällöin on olemassa $B \in \B$ siten, että $x \in B \subset B_1 \cap B_2$.
 \end{maar}
 
-Joukko $U \subset \X$ kuuluu kannan $\B$ määräämään topologiaan jos ja vain jos $U$ on jokin yhdiste kannan alkioista.
+Joukko $U \subset \X$ on avoin kannan $\B$ määräämässä topologiassa jos ja vain jos $U$ on jokin yhdiste kannan alkioista.
 
 \chapter{Metrinen avaruus}\label{MET}
 
-Metrisen avaruuden keskeinen käsite on metriikka, joka pyrkii formalisoimaan etäisyyden käsitteen. Kandin aiheen kannalta erityisen huomionarvoista on se, että metriikka määrää yksiselitteisesti avaruudelle luonnollisen topologian.
+Metrisen avaruuden keskeinen käsite on metriikka, joka pyrkii formalisoimaan etäisyyden käsitteen. Kandin aiheen kannalta erityisen huomionarvoista on se, että metriikka indusoi avaruudelle topologian, ja metriikan indusoimilla topologioilla on monia hyödyllisiä erityisominaisuuksia.
 
-\begin{maar}\label{metmaar}egation.
-De Morgans Law of Set Theory Proof - Math Theorems
-Statement:
- 
-\emph{Metriikka}. Joukossa $\X$ määritelty funktio $d : \X \times \X \to \R$ on \emph{metriikka} joukossa $X$ jos pätee
+\begin{maar}\label{metmaar}
+\emph{Metriikka}. Joukossa $\X$ määritelty funktio $d : \X \times \X \to \R$ on \emph{metriikka} joukossa $X$, jos pätee
 
 (M1) Kaikilla $a, b \in \X$ pätee $d(a,b) \geq 0$.
 
@@ -136,7 +133,16 @@ Palautetaan ensin mieleen jonon määritelmä. Sanomme, että kuvaus $x : \N \to
 
 Todistamatta mainitsemme että metrisessä avaruudessa jono voi supeta vain yhtä pistettä kohti.
 
-Metrisessä avaruudessa voimme nyt osoittaa, että joukon $A$ jonojen raja-arvojen joukko on sama kuin joukon $A$ sulkeuma. Tämä tarkoittaa, että piste $x$ kuuluu joukon $A$ sulkeumaan jos ja vain jos on sellainen jono $a : \N \to A$ että tämän raja-arvo on $x$. Todistuksessa on kaksi puolta.
+
+\begin{lause}
+Olkoon $A \subset \X$ joukko. Tällöin pätee
+\begin{equation}
+\overline{A} = \{x \in \X \mid \text{Löytyy jono } n : N \to A \text{ joka suppenee kohti pistettä } x\}
+\end{equation}
+Toisin sanoen, joukon jonojen raja-arvojen joukko on sama, kuin joukon sulkeuma.
+\end{lause}
+
+\noindent\emph{Todistus}.
 
 \emph{Kohta 1}. Osoitetaan, että jos jono $a : \N \to A$ suppenee kohti pistettä $x \in \X$, piste $x$ kuuluu joukon $A$ sulkeumaan.
 
@@ -155,18 +161,18 @@ Olkoon $\R$ avaruus, jossa topologian $\T$ määrittelee seuraava ehto:
 
 Osoitamme ensin että $\T$ määrää topologian.
 
-Ehdot 1 ja 2 voidaan osoittaa De Morganin laeilla, eli 
+Ehdot T1 ja T2 voidaan osoittaa De Morganin laeilla, eli 
 
 \begin{align}
 (A \cap B)^C &= A^C \cup B^C \\
 (A \cup B)^C &= A^C \cap B^C
 \end{align}
 
-Ehdon 1 kohdalla huomaamme että jos joukon $A$ komplementti on numeroituva, tällöin yhdisteen $A \cup B$ komplementti sisältyy joukon $A$ komplementtiin. Toisaalta ehto 2 toteutuu kun huomaamme että kahden numeroituvan joukon yhdiste on yhä numeroituva, eli kahden joukon leikkauksen komplementti on yhä numeroituva jos molempien alkuperäisten joukkojen komplementti oli numeroituva.
+Ehdon T1 kohdalla huomaamme että jos joukon $A$ komplementti on numeroituva, tällöin yhdisteen $A \cup B$ komplementti sisältyy joukon $A$ komplementtiin. Toisaalta ehto T2 toteutuu kun huomaamme että kahden numeroituvan joukon yhdiste on yhä numeroituva, eli kahden joukon leikkauksen komplementti on yhä numeroituva jos molempien alkuperäisten joukkojen komplementti oli numeroituva.
 
-Ehto 3 toteutuu selvästi.
+Ehto T3 toteutuu selvästi.
 
-Tutkitaan erityisesti yksikköväliä $\I = [0,1]$. Joukon $\I$ sulkeuma osoittautuu olevan koko avaruus $\X$. Tämän osoittamiseksi teemme vastaoletuksen, eli oletamme että löytyy $x \in \X$ joka ei kuulu joukon $\I$ sulkeumaan. Tällöin pisteellä $x$ on ainakin yksi ympäristö $U \subset \X$ joka ei leikkaa joukkoa $\I$. Tällöin $\I \subset U^C$. Koska tästä seuraisi että $U^C$ on ylinumeroituva, tämä on ristiriita, eli vastaoletuksemme oli väärä.
+Tutkitaan erityisesti yksikköväliä $\I = [0,1]$. Joukon $\I$ sulkeuma osoittautuu olevan koko avaruus $\X$. Tämän osoittamiseksi teemme vastaoletuksen, eli oletamme että löytyy $x \in \X$ joka ei kuulu joukon $\I$ sulkeumaan. Tällöin pisteellä $x$ on ainakin yksi ympäristö $U \subset \X$ joka ei leikkaa joukkoa $\I$. Tällöin $\I \subset U^C$. Koska tästä seuraisi että $U^C$ on ylinumeroituva, tämä on ristiriita joukon $U$ avoimuuden kanssa, eli vastaoletuksemme oli väärä.
 
 Toisaalta voimme osoittaa että jos $x \in \R$ ja $x \not\in \I$, mikään joukon $\I$ jono ei suppene kohti pistettä $x$. Teemme jälleen vastaoletuksen, eli että löytyy jono $a$ joukossa $\I$ joka suppenee kohti pistettä $x$.
 
@@ -175,9 +181,9 @@ Nyt voimme valita pisteelle $x$ ympäristön $U \subset \R$ siten, että
 U = \R \setminus \{x \in \R \mid a_i = x \text{ jollain } i \in \N \}
 \end{equation}
 
-Selvästi tämä joukko on avoin, koska tämän sulkeuma on jonon arvojoukko. Selvästi joukko $U$ myös sisältää pisteen $x$, sillä jonon arvot jäävät joukkoon $\I$ mutta $x \not\in \I$. Täten $U$ on pisteen $x$ ympäristö, ja toisaalta myös selvästi jonon alkiot eivät ikinä sisälly tähän joukkoon. Koska jonon suppeneminen vaatii että jokaiselle pisteen $x$ ympäristölle pätee että ennen pitkään jono saa arvonsa tässä joukossa, saamme ristiriidan, eli jonomme ei suppene kohti pistettä $x$. Koska emme tehneet mitään oletuksia jonosta, saamme että mikään yksikkövälin $\I$ jono ei suppene kohti pistettä $x$.
+Selvästi tämä joukko on avoin, koska tämän joukon komplementti on jonon arvojoukko, joka on selvästi numeroituva. Selvästi joukko $U$ myös sisältää pisteen $x$, sillä jonon arvot jäävät joukkoon $\I$ mutta $x \not\in \I$. Täten $U$ on pisteen $x$ ympäristö, ja toisaalta myös selvästi jonon alkiot eivät ikinä sisälly tähän joukkoon. Koska jonon suppeneminen vaatii että jokaiselle pisteen $x$ ympäristölle pätee että ennen pitkään jono saa arvonsa tässä joukossa, saamme ristiriidan, eli mikään yksikkövälin $\I$ jono ei suppene kohti pistettä $x$.
 
-Täten sulkeuma on tässä merkillisessä avaruudessamme laajempi kuin jonojen suppenemispisteet. Jotta saisimme kuvailtuja sulkeumaa suppenemisen kautta, meidän on käytettävä jonoja yleisempää käsitettä.
+Täten sulkeuma on merkillisessä avaruudessamme laajempi kuin jonojen suppenemispisteet. Jotta saisimme kuvailtuja sulkeumaa suppenemisen kautta, meidän on käytettävä jonoja yleisempää käsitettä.
 
 \chapter{Verkko}
 
@@ -199,7 +205,9 @@ Kutsumme paria $(\X, \verkop)$ \emph{suunnatuksi joukoksi}
 
 Ehto V3 erottaa tämän jonon määritelmästä. Toisin kuin luonnollisilla luvuilla, järjestyksemme on vain osittainen. Jos $a, b \in \X$, ei välttämättä päde $a \verkop b$ eikä $b \verkop a$. Ehto V3 kuitenkin antaa meille keinon puhua suppenemisesta liki identtisesti samalla tavoin kuin jonoilla.
 
-Olkoon $\D$ suunnattu joukko, ja olkoon $\X$ avaruus. Kuvaus $n : \D \to \X$ on avaruuden $\X$ \emph{verkko}. Mikäli kaikki verkon $n$ arvot kuuluvat avaruuden $\X$ osajoukkoon $A$, voimme sanoa että $n$ on verkko joukossa $A$.
+\begin{maar}\label{verkmaar}
+\emph{Verkko}. Olkoon $\D$ suunnattu joukko, $\X$ avaruus, ja $n : \D \to \X$ kuvaus suunnatusta joukosta $\D$ avaruuteen $\X$. Tällöin sanomme että $n$ on avaruuden $\X$ \emph{verkko}. Mikäli kaikki verkon $n$ arvot kuuluvat avaruuden $\X$ osajoukkoon $A$, sanomme että $n$ on verkko joukossa $A$.
+\end{maar}
 
 Osoittautuu että aiemmin käyttämämme määritelmä jonon suppenemiselle kelpaa lähes sellaisenaan verkon suppenemisen määrittelemiselle, korvaamalla jonon verkolla.
 
@@ -217,7 +225,9 @@ Olkoon $\X$ avaruus, ja $A \subset \X$ tämän avaruuden osajoukko. Jos piste $x
 
 \emph{Suunta $\leftarrow$}
 
-Olkoon $\X$ avaruus, $A \subset \X$ joukko ja $n : \D -> A$ verkko joka suppenee kohti pistettä $x \in \X$.
+Olkoon $\X$ avaruus, $A \subset \X$ joukko ja $n : \D -> A$ verkko joka suppenee kohti pistettä $x \in \X$. Osoitamme että piste $x$ kuuluu joukon $A$ sulkeumaan.
+
+Olkoon $U \subset \X$ jokin pisteen $x$ ympäristö. Koska verkko $n$ suppenee kohti pistettä $x$, löytyy verkon lähtöavaruuden alkio $d_U$ jolle pätee, mikäli $d_u \verkop d$, tällöin $n(d) \in U$. Täten siis $n(d_U) \in U$, mutta toisaalta myös verkon määritelmän perusteella $n(d_U) \in A$, eli $n(d_U) \in U \cap A \not= \varnothing$
 
 \emph{Suunta $\to$}
 
