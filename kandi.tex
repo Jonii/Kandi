@@ -239,9 +239,9 @@ Määritellään joukko $\D$ seuraavasti:
 \D = \{U \cap A \mid U \text{ on pisteen x ympäristö}\}
 \end{equation}
 
-Koska piste $x$ kuuluu joukon $A$ sulkeumaan, jokainen joukon $\D$ alkio on epätyhjä joukko. Voimme siis liittää jokaiseen joukon $\D$ alkioon jonkin pisteen $a_U \in A \cap U$. Voimme siis rakentaa kuvauksen $n : \D \to A, n(U) \in A \cap U$. Emme määrittele funktiota tuon tarkemmin, meille riittää tietää että jokaiselle alkiolle voidaan tämän ehdon toteuttava funktion arvo määrätä.
+Koska piste $x$ kuuluu joukon $A$ sulkeumaan, jokainen pisteen $x$ ympäristö leikkaa joukon A, eli jokainen joukon $\D$ alkio on epätyhjä joukko. Voimme siis liittää jokaiseen joukon $\D$ alkioon jonkin pisteen $a_U \in A \cap U$. Voimme siis rakentaa kuvauksen $n : \D \to A, n(U) \in A \cap U$. Emme määrittele funktiota tuon tarkemmin, meille riittää tietää että jokaiselle alkiolle voidaan tämän ehdon toteuttava funktion arvo määrätä.
 
-Nyt voimme suunnata joukon $\D$ relaatiolla $\supseteq$. $\subseteq$ toteuttaa selvästi ehdot V1 ja V2. Ehto V3 seuraa siitä, että mikäli meillä on $D_1, D_2 \in \D$, tällöin $D_n$ on muotoa $A \cap U_n$, jossa $U_n$ on pisteen $x$ ympäristö. Topologian määritelmän ehdon T2 mukaan siis leikkaus $U_1 \cap U_2 =: U$ on myös avoin joukko. Toisaalta joukko $U$ sisältää pisteen $x$, eli $A \cap U \in \D =: A$ ja $A \subset A_1$ ja $A \subset A_2$.
+Nyt voimme suunnata joukon $\D$ relaatiolla $\supset$. Relaatio $\supset$ tunnetusti toteuttaa transitiivisuuden ja refleksiivisuyyden, eli ehdot V1 ja V2. Ehden V3 toteutumiseksi huomaamme, että mikäli valitsemme kaksi mielivaltaista avaruuden $\D$ jäsentä $D_1, D_2 \in \D$, tällöin $D_n$ on muotoa $A \cap U_n$, jossa $U_n$ on pisteen $x$ ympäristö. Topologian määritelmän ehdon T2 mukaan siis leikkaus $U_1 \cap U_2 =: U$ on myös avoin joukko. Toisaalta joukko $U$ sisältää pisteen $x$, eli $A \cap U \in \D$ ja $A_1 \supset A$ ja $A_2 \supset A$.
 
 Funktio $n : \D \to A$ on siis verkko. Jäljellä on enää osoittaa että $n$ suppenee kohti pistettä $x$.
 
@@ -251,7 +251,7 @@ Olkoon $U$ jokin pisteen $x$ ympäristö. Meidän on löydettävä joukon $\D$ a
 \text{jos } d_U \supset d \text{, tällöin } n(d) \in U
 \end{equation}
 
-Tällainen alkio löytyy muodossa $d_U = A \cap U$. Jos jokin joukon $\D$ alkio $d$ sisältyy alkioon $d_U$, eli pätee $d_U \subseteq d$, tällöin piste $d$ on muotoa $d = V \cap A$, joten $V \subseteq U$. Täten $n(d) \in V \subset U$.
+Tällainen alkio löytyy muodossa $d_U = A \cap U$. Jos jokin joukon $\D$ alkio $d$ sisältyy alkioon $d_U$, eli pätee $d \supset d_U$, tällöin piste $d$ on muotoa $d = V \cap A$, joten $V \subseteq U$. Täten $n(d) \in V \subset U$. Täten $n$ suppenee kohti pistettä $x$.
 
 \begin{thebibliography}{9}
 
