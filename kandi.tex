@@ -104,14 +104,14 @@ Joukon $A$ sulkeuma on suljettu, ja sisältyy jokaiseen suljettuun joukkoon joka
 Toisin sanoen, epätyhjä joukko $U \subset \X$ on avoin topologiassa $\T$ jos ja vain jos $U$ on yhdiste kannan alkioista. Kanta ei ole yksikäsitteinen, samalle topologialle voidaan löytää useita kantoja.
 
 \begin{lause}\label{kantalause}
-\emph{Kantalause}. Topologia II \cite{Topo} Lause 2.9. Olkoon $\X$ joukko, ja $\B \subset \Pow(\X)$. $\B$ on tällöin jonkin topologian kanta, jos ja vain jos seuraavat ehdot pätevät:
+\emph{Kantalause. Topologia II \cite{Topo} Lause 2.9}. Olkoon $\X$ joukko, ja $\B \subset \Pow(\X)$. $\B$ on tällöin jonkin topologian kanta, jos ja vain jos seuraavat ehdot pätevät:
 
 (K1) $\B$ on joukon $\X$ peite,
 
 (K2) Jos $B_1, B_2 \in \B$, ja jos $x \in B_1 \cap B_2$, niin on olemassa $B \in \B$ siten, että $x \in B \subset B_1 \cap B_2$.
 \end{lause}
 
-Lause löytyy todistettuna kirjasta Topologia II\cite{Topo}.
+\noindent\emph{Todistus}. Sivuutamme todistuksen. Lause on todistettu kirjassa Topologia II \cite{Topo}.
 
 \chapter{Metrinen avaruus}\label{MET}
 
@@ -133,16 +133,14 @@ Metrisen avaruuden keskeinen käsite on metriikka, joka pyrkii formalisoimaan et
 \emph{Palloympäristö}. Pisteen $x \in \X$ $r$-säteinen \emph{palloympäristö} on joukko $B(x,r) = \{ y \in \X \mid d(x, y) < r \}$.
 \end{maar}
 
-Metriselle avaruudelle on hyvin luonnollista määrätä topologia käyttämällä kantana avaruuden eri palloympäristöjä. Jos siis $\X$ on metrinen avaruus, sen kannaksi valitaan $\B = \{ B(x,r) \mid x \in \X, r \in \R_{> 0} \}$. Kutsumme kannan $\B$ määräämää topologiaa nyt \emph{metriikan indusoimaksi topologiaksi} joukossa $\X$.
-
-Emme todista että tämä määrää topologian, mutta todistus on mahdollista muotoilla melko suoraviivaisesti kantalausetta \ref{kantalause} käyttämällä.
+Metriselle avaruudelle on hyvin luonnollista määrätä topologia käyttämällä kantana avaruuden eri palloympäristöjä. Jos siis $\X$ on metrinen avaruus, voimme valita sen kannaksi joukon $\B = \{ B(x,r) \mid x \in \X, r \in \R_{> 0} \}$. Kutsumme kannan $\B$ määräämää topologiaa nyt \emph{metriikan indusoimaksi topologiaksi} joukossa $\X$.
 
 \chapter{Sulkeuman karakterisointi jonojen avulla}
 
 Palautetaan ensin mieleen jonon määritelmä. Sanomme, että kuvaus $x : \N \to \X$ on jono avaruudessa $\X$, ja merkitsemme $x_n := x(n)$. Erityisesti jonon suppeneminen ja raja-arvo on työmme kannalta keskeistä.
 
 \begin{maar}\label{jonosupmaar}
-\emph{Jonon suppeneminen}. Olkoon $\X$ topologinen avaruus, ja olkoon $a$ jono avaruudessa $\X$. Sanomme, että jono \emph{suppenee} kohti pistettä $x$, mikäli jokaista pisteen $x$ ympäristöä $U \subset \X$ kohti voidaan valita jonon $a$ indeksi $n_U$ siten, että kaikilla $n > n_U$ pätee $a_n \in U$. Tiettyjen ehtojen pätiessä avaruuden jono voi supeta vain yhtä pistettä kohti. Tällöin jos jono suppenee kohti pistettä $x$, voimme sanoa että $x$ on jonon \emph{raja-arvo}.
+\emph{Jonon suppeneminen}. Olkoon $\X$ topologinen avaruus, ja olkoon $a$ jono avaruudessa $\X$. Sanomme, että jono $a$ \emph{suppenee} kohti pistettä $x$, mikäli jokaista pisteen $x$ ympäristöä $U \subset \X$ kohti voidaan valita jonon $a$ indeksi $n_U$ siten, että kaikilla $n > n_U$ pätee $a_n \in U$. Tiettyjen ehtojen pätiessä avaruuden jono voi supeta vain yhtä pistettä kohti. Tällöin jos jono suppenee kohti pistettä $x$, voimme sanoa että $x$ on jonon \emph{raja-arvo}.
 \end{maar}
 
 Todistamatta mainitsemme että metrisessä avaruudessa jono voi supeta vain yhtä pistettä kohti. Tämä on todistettu esimerkiksi kirjassa Topologia I \cite{Topo1}.
