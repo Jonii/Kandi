@@ -67,11 +67,11 @@ Topologian avulla voidaan puhua avaruuden rakenteesta. Tietyllä tapaa topologia
 \begin{maar}\label{topmaar}
 \emph{Topologia}. Olkoon $\X$ avaruus ja $\T \subset \Pow(\X)$ joukon $\X$ osajoukkojen joukko. Sanomme, että $\T$ on joukon $\X$ \emph{topologia}, mikäli seuraavat ehdot pätevät:
 
-(T1) $\T$ sisältää alkioidensa mielivaltaiset yhdisteet
+(T1) $\T$ sisältää alkioidensa mielivaltaiset yhdisteet,
 
-(T2) Jos $A,B \in \T$, niin $A \cap B \in \T$
+(T2) Jos $A,B \in \T$, niin $A \cap B \in \T$,
 
-(T3) $\X, \varnothing \in \T$
+(T3) $\X, \varnothing \in \T$.
 \end{maar}
 
 Jos joukolle $\X$ on määrätty topologia $\T$, sanomme että $\X$ on \emph{topologinen avaruus}.
@@ -87,7 +87,7 @@ Oletamme tästedes, että $\X$ on topologinen avaruus.
 \begin{maar}\label{sulk}
 \emph{Sulkeuma}. Joukon $A \subset \X$ \emph{sulkeuma}, merkitään $\overline{A}$, määritellään niiden pisteiden joukkona, joiden jokainen ympäristö leikkaa joukon $A$.
 \begin{equation}
-\overline{A} = \{ x \in \X \mid \text{jos } U \text{ on pisteen } x \text{ ympäristö, niin pätee } U \cap A \not= \varnothing \}
+\overline{A} = \{ x \in \X \mid \text{jos } U \text{ on pisteen } x \text{ ympäristö, niin pätee } U \cap A \not= \varnothing \}\text{.}
 \end{equation}
 \end{maar}
 
@@ -96,9 +96,9 @@ Joukon $A$ sulkeuma on suljettu, ja sisältyy jokaiseen suljettuun joukkoon joka
 \begin{maar}\label{kantamaar}
 \emph{Kanta}. Käytännössä voi olla hankala listata jokainen tietyn topologian avoin joukko määritellessä topologiaa. Tämän sijaan usein puhutaan rajatummasta joukosta avoimia joukkoja, jotka yksikäsitteisesti määräävät topologian. Olkoon joukko $\X$ avaruus jonka topologian määrittää topologia $\T$. Joukko $\B \subset \Pow(\X)$ on topologian $\T$ \emph{kanta} joukossa $\X$, mikäli seuraavat ehdot pätevät:
 
-(1) $\B \subset \T$
+(1) $\B \subset \T$,
 
-(2) Jokainen $U \in \T, U \not= \varnothing$ voidaan lausua yhdisteenä joistain kannan $\B$ jäsenistä
+(2) Jokainen $U \in \T, U \not= \varnothing$ voidaan lausua yhdisteenä joistain kannan $\B$ jäsenistä.
 \end{maar}
 
 Toisin sanoen, epätyhjä joukko $U \subset \X$ on avoin topologiassa $\T$ jos ja vain jos $U$ on yhdiste kannan alkioista. Kanta ei ole yksikäsitteinen, samalle topologialle voidaan löytää useita kantoja.
@@ -106,10 +106,10 @@ Toisin sanoen, epätyhjä joukko $U \subset \X$ on avoin topologiassa $\T$ jos j
 \begin{lause}\label{kantalause}
 \emph{Kantalause}. Topologia II \cite{Topo} Lause 2.9. Olkoon $\X$ joukko, ja $\B \subset \Pow(\X)$. $\B$ on tällöin jonkin topologian kanta, jos ja vain jos seuraavat ehdot pätevät:
 
-(K1) $\B$ on joukon $\X$ peite.
+(K1) $\B$ on joukon $\X$ peite,
 
 (K2) Jos $B_1, B_2 \in \B$, ja jos $x \in B_1 \cap B_2$, niin on olemassa $B \in \B$ siten, että $x \in B \subset B_1 \cap B_2$.
-\end{lause}.
+\end{lause}
 
 Lause löytyy todistettuna kirjasta Topologia II\cite{Topo}.
 
@@ -120,11 +120,11 @@ Metrisen avaruuden keskeinen käsite on metriikka, joka pyrkii formalisoimaan et
 \begin{maar}\label{metmaar}
 \emph{Metriikka}. Joukossa $\X$ määritelty funktio $d : \X \times \X \to \R$ on \emph{metriikka} joukossa $X$, jos pätee
 
-(M1) Kaikilla $a, b \in \X$ pätee $d(a,b) \geq 0$.
+(M1) Kaikilla $a, b \in \X$ pätee $d(a,b) \geq 0$,
 
-(M2) Kaikilla $a, b \in \X$ pätee $d(a,b) = d(b,a)$
+(M2) Kaikilla $a, b \in \X$ pätee $d(a,b) = d(b,a)$,
 
-(M3) $d(a,b) = 0$ jos ja vain jos $a = b$.
+(M3) $d(a,b) = 0$ jos ja vain jos $a = b$,
 
 (M4) (Kolmioepäyhtälö) Kaikilla $a, b, c \in \X$ pätee $d(a,c) \leq d(a,b) + d(b,c)$.
 \end{maar}
@@ -150,7 +150,7 @@ Todistamatta mainitsemme että metrisessä avaruudessa jono voi supeta vain yht�
 \begin{lause}
 Olkoon $\X$ metrinen avaruus, ja $A \subset \X$ joukko. Tällöin pätee
 \begin{equation}
-\overline{A} = \{x \in \X \mid \text{Löytyy jono } n : N \to A \text{ joka suppenee kohti pistettä } x\}
+\overline{A} = \{x \in \X \mid \text{Löytyy jono } n : N \to A \text{ joka suppenee kohti pistettä } x\}\text{.}
 \end{equation}
 Toisin sanoen, joukon jonojen raja-arvojen joukko on sama, kuin joukon sulkeuma.
 \end{lause}
@@ -172,7 +172,7 @@ Olkoon joukko $U \subset \X$ jokin pisteen $x$ ympäristö. Koska topologian $\T
 Koska $d(x,y) < r$, löytyy luku $\epsilon \in \R$ jolle pätee $d(x,y) + \epsilon < r$, ja täten voimme kolmioepäyhtälön avulla osoittaa että palloympäristö $B^* := B(x,\epsilon)$ sisältyy palloympäristöön $B(y,r)$. Jos piste $z$ sisältyy palloympäristöön $B(x,\epsilon)$, tällöin kolmioepäyhtälön avulla saamme
 
 \begin{equation}
-d(y,z) < d(y,x) + d(x,z) < d(y,x) + \epsilon < r
+d(y,z) < d(y,x) + d(x,z) < d(y,x) + \epsilon < r\text{.}
 \end{equation}
 
 eli piste $z$ sisältyy palloympäristöön $B(y,r)$. Edeltävässä yhtälössä ensimmäisessä epäyhtälössä käytimme kolmioepäyhtälöä, toisessa tietoa siitä, että $z \in B(x,\epsilon)$.
@@ -185,7 +185,7 @@ Aiemmin huomasimme että metrisessä avaruudessa jonon raja-arvojen avulla voida
 Olkoon $\R$ avaruus, jossa topologian $\T$ määrittelee seuraava ehto:
 
 \begin{equation}
-\T = \{U \subset \R \mid \R \setminus U \text{ on numeroituva} \} \cup \{ \varnothing \}
+\T = \{U \subset \R \mid \R \setminus U \text{ on numeroituva} \} \cup \{ \varnothing \}\text{.}
 \end{equation}
 
 Osoitamme ensin että $\T$ määrää topologian.
@@ -207,7 +207,7 @@ Toisaalta voimme osoittaa että jos $x \in \R$ ja $x \not\in \I$, mikään jouko
 
 Nyt voimme valita pisteelle $x$ ympäristön $U \subset \R$ siten, että
 \begin{equation}
-U = \R \setminus \{x \in \R \mid a_i = x \text{ jollain } i \in \N \}
+U = \R \setminus \{x \in \R \mid a_i = x \text{ jollain } i \in \N \}\text{.}
 \end{equation}
 
 Selvästi tämä joukko on avoin, koska tämän joukon komplementti on jonon arvojoukko, joka on selvästi numeroituva. Selvästi joukko $U$ myös sisältää pisteen $x$, sillä jonon arvot jäävät joukkoon $\I$ mutta $x \not\in \I$. Täten $U$ on pisteen $x$ ympäristö, ja toisaalta myös selvästi jonon alkiot eivät ikinä sisälly tähän joukkoon. Koska jonon suppeneminen vaatii että jokaiselle pisteen $x$ ympäristölle pätee että ennen pitkään jono saa arvonsa tässä joukossa, saamme ristiriidan, eli mikään yksikkövälin $\I$ jono ei suppene kohti pistettä $x$.
@@ -223,9 +223,9 @@ Jono on kuvaus luonnollisilta luvuilta $\N$ kohdeavaruuteen $\X$. Verkko sen sij
 \begin{maar}\label{suunjoukmaar}
 \emph{Suunnattu joukko}. Olkoon joukko $\X$ jokin joukko, jossa on määritelty relaatio $\verkop$ joka toteuttaa seuraavat ehdot:
 
-(V1) Jos $a, b, c \in \X$, ja $a \verkop b \verkop c$, tällöin $a \verkop c$ (transitiivisuus)
+(V1) Jos $a, b, c \in \X$, ja $a \verkop b \verkop c$, tällöin $a \verkop c$ (transitiivisuus),
 
-(V2) Jos $a \in \X$, tällöin $a \verkop a$.
+(V2) Jos $a \in \X$, tällöin $a \verkop a$,
 
 (V3) Jos $a, b \in \X$, tällöin on olemassa $c \in \X$ siten, että $a \verkop c$ ja $b \verkop c$.
 
@@ -256,7 +256,7 @@ Olkoon $\X$ avaruus, ja $A \subset \X$ tämän avaruuden osajoukko. Jos piste $x
 
 Olkoon $\X$ avaruus, $A \subset \X$ joukko ja $n : \D \to A$ verkko joka suppenee kohti pistettä $x \in \X$. Osoitamme että piste $x$ kuuluu joukon $A$ sulkeumaan.
 
-Olkoon $U \subset \X$ jokin pisteen $x$ ympäristö. Koska verkko $n$ suppenee kohti pistettä $x$, löytyy verkon lähtöavaruuden alkio $d_U$ jolle pätee, mikäli $d_U \verkop d$, tällöin $n(d) \in U$. Täten siis $n(d_U) \in U$, mutta toisaalta myös verkon määritelmän perusteella $n(d_U) \in A$, eli $n(d_U) \in U \cap A \not= \varnothing$
+Olkoon $U \subset \X$ jokin pisteen $x$ ympäristö. Koska verkko $n$ suppenee kohti pistettä $x$, löytyy verkon lähtöavaruuden alkio $d_U$ jolle pätee, mikäli $d_U \verkop d$, tällöin $n(d) \in U$. Täten siis $n(d_U) \in U$, mutta toisaalta myös verkon määritelmän perusteella $n(d_U) \in A$, eli $n(d_U) \in U \cap A \not= \varnothing$.
 
 \emph{Suunta $\Rightarrow$}
 
