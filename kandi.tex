@@ -58,7 +58,7 @@
 
 Kandidaatintutkielmassamme haluamme osoittaa metrisissä avaruuksissa sulkeuman karakterisoinnin jonon raja-arvojen avulla yleistyvän yleisiin topologisiin avaruuksiin käyttämällä jonojen sijaan konstruktiota \textbf{suunnattu verkko}. Tutkielma kuuluu topologian alaan, ja suurimmaksi osaksi sisältyy kurssiin Topologia II.
 
-Osoitamme aluksi miten metrisessä avaruudessa sulkeuma voidaan karakterisoida jonojen raja-arvojen avulla, ja tämän jälkeen tutkimme ei-metrisen avaruuden tapausta jossa sama tulos ei enää päde. Tämän jälkeen johdamme suunnattuja verkkoja käyttävän tuloksen yleisiin topologisiin avaruuksiin, ja näytämme kuinka tämä määrittely johtaa eri lopputulokseen esimerkkitapauksessamme.
+Osoitamme aluksi miten metrisessä avaruudessa sulkeuma voidaan karakterisoida jonojen raja-arvojen avulla, ja tämän jälkeen tutkimme ei-metrisen avaruuden tapausta jossa sama tulos ei enää päde. Tämän jälkeen johdamme suunnattuja verkkoja käyttävän tuloksen yleisiin topologisiin avaruuksiin.
 
 \chapter{Topologia}\label{TOP}
 
@@ -104,7 +104,7 @@ Joukon $A$ sulkeuma on suljettu, ja sisältyy jokaiseen suljettuun joukkoon joka
 Toisin sanoen, epätyhjä joukko $U \subset \X$ on avoin topologiassa $\T$ jos ja vain jos $U$ on yhdiste kannan alkioista. Kanta ei ole yksikäsitteinen, samalle topologialle voidaan löytää useita kantoja.
 
 \begin{lause}\label{kantalause}
-\emph{Kantalause}. \cite{Topo} Lause 2.9. Olkoon $\X$ joukko, ja $\B \subset \Pow(\X)$. $\B$ on tällöin jonkin topologian kanta, jos ja vain jos seuraavat ehdot pätevät:
+\emph{Kantalause}. Topologia II \cite{Topo} Lause 2.9. Olkoon $\X$ joukko, ja $\B \subset \Pow(\X)$. $\B$ on tällöin jonkin topologian kanta, jos ja vain jos seuraavat ehdot pätevät:
 
 (K1) $\B$ on joukon $\X$ peite.
 
@@ -135,7 +135,7 @@ Metrisen avaruuden keskeinen käsite on metriikka, joka pyrkii formalisoimaan et
 
 Metriselle avaruudelle on hyvin luonnollista määrätä topologia käyttämällä kantana avaruuden eri palloympäristöjä. Jos siis $\X$ on metrinen avaruus, sen kannaksi valitaan $\B = \{ B(x,r) \mid x \in \X, r \in \R_{> 0} \}$. Kutsumme kannan $\B$ määräämää topologiaa nyt \emph{metriikan indusoimaksi topologiaksi} joukossa $\X$.
 
-Emme todista että tämä määrää topologian, mutta todistus on mahdollista muotoilla melko suoraviivaisesti kantalausetta\ref{kantalause} käyttämällä.
+Emme todista että tämä määrää topologian, mutta todistus on mahdollista muotoilla melko suoraviivaisesti kantalausetta \ref{kantalause} käyttämällä.
 
 \chapter{Sulkeuman karakterisointi jonojen avulla}
 
@@ -145,8 +145,7 @@ Palautetaan ensin mieleen jonon määritelmä. Sanomme, että kuvaus $x : \N \to
 \emph{Jonon suppeneminen}. Olkoon $\X$ topologinen avaruus, ja olkoon $a$ jono avaruudessa $\X$. Sanomme, että jono \emph{suppenee} kohti pistettä $x$, mikäli jokaista pisteen $x$ ympäristöä $U \subset \X$ kohti voidaan valita jonon $a$ indeksi $n_U$ siten, että kaikilla $n > n_U$ pätee $a_n \in U$. Tiettyjen ehtojen pätiessä avaruuden jono voi supeta vain yhtä pistettä kohti. Tällöin jos jono suppenee kohti pistettä $x$, voimme sanoa että $x$ on jonon \emph{raja-arvo}.
 \end{maar}
 
-Todistamatta mainitsemme että metrisessä avaruudessa jono voi supeta vain yhtä pistettä kohti. Tämä on todistettu esimerkiksi kirjassa Topologia I\cite{Topo1}.
-
+Todistamatta mainitsemme että metrisessä avaruudessa jono voi supeta vain yhtä pistettä kohti. Tämä on todistettu esimerkiksi kirjassa Topologia I \cite{Topo1}.
 
 \begin{lause}
 Olkoon $\X$ metrinen avaruus, ja $A \subset \X$ joukko. Tällöin pätee
@@ -166,7 +165,19 @@ Olkoon $U$ jokin pisteen $x$ ympäristö. Koska jono $a$ suppenee kohti pistett�
 
 \emph{Kohta 2}. Osoitetaan, että jos piste $x$ kuuluu joukon $A$ sulkeumaan, löytyy jono $a : \N \to A$ joka suppenee kohti pistettä $x$.
 
+Valitaan jono $a$ siten, että $a_n \in A \cap B(x, 2^-n)$, eli jokainen alkio kuuluu $2^-n$-säteisen pisteen $x$ palloympäristön, ja joukon $A$ leikkaukseen. Koska jokainen edellä kuvatunlainen palloympäristö kuuluu topologian kantaan ja on täten avoin, ja toisaalta koska piste $x$ kuuluu joukon $A$ sulkeumaan, on jokainen leikkaus epätyhjä, eli valinta voidaan tehdä.
 
+Olkoon joukko $U \subset \X$ jokin pisteen $x$ ympäristö. Koska topologian $\T$ kanta on palloympäristöjen joukko, voidaan joukko $U$ lausua näiden kannan alkioiden yhdisteenä, ja siis löytyy jokin kannan alkio, palloympäristö $B(y,r)$ joka sisältää pisteen $x$ ja sisältyy joukkoon $U$, eli $x \in B \subset U$.
+
+Koska $d(x,y) < r$, löytyy luku $\epsilon \in \R$ jolle pätee $d(x,y) + \epsilon < r$, ja täten voimme kolmioepäyhtälön avulla osoittaa että palloympäristö $B^* := B(x,\epsilon)$ sisältyy palloympäristöön $B(y,r)$. Jos piste $z$ sisältyy palloympäristöön $B(x,\epsilon)$, tällöin kolmioepäyhtälön avulla saamme
+
+\begin{equation}
+d(y,z) < d(y,x) + d(x,z) < d(y,x) + \epsilon < r
+\end{equation}
+
+eli piste $z$ sisältyy palloympäristöön $B(y,r)$. Edeltävässä yhtälössä ensimmäisessä epäyhtälössä käytimme kolmioepäyhtälöä, toisessa tietoa siitä, että $z \in B(x,\epsilon)$.
+
+Toisaalta, koska joukon palloympäristön $B^* = \{z \in \X \mid d(z,y) < r\}$ säde $r$ on positiivinen reaaliluku, voidaan valita tämän ja pisteen $0$ väliltä jokin muotoa $2^-n$ oleva luku. Tällöin $a_n$ ja jokainen tätä seuraava jonon alkio sisältyy joukkoon $B$, eli jos $m > n$, pätee $a_m \in B \subset U$. Koska joukko $U$ oli valittu mielivaltaisesti, olemme nyt osoittaneet että jono $a$ saavuttaa ennenpitkää jokaisen pisteen $x$ ympäristön.
 
 \chapter{Erikoinen ei-metrinen avaruus}
 Aiemmin huomasimme että metrisessä avaruudessa jonon raja-arvojen avulla voidaan määrittää sulkeuma. Nyt tutkimme ei-metristä avaruutta jossa tämä karakterisointi ei päde.
@@ -186,11 +197,11 @@ Ehdot T1 ja T2 voidaan osoittaa De Morganin laeilla, eli
 (A \cup B)^C &= A^C \cap B^C
 \end{align}
 
-Ehdon T1 kohdalla huomaamme että jos joukon $A$ komplementti on numeroituva, tällöin yhdisteen $A \cup B$ komplementti sisältyy joukon $A$ komplementtiin. Toisaalta ehto T2 toteutuu kun huomaamme että kahden numeroituvan joukon yhdiste on yhä numeroituva, eli kahden joukon leikkauksen komplementti on yhä numeroituva jos molempien alkuperäisten joukkojen komplementti oli numeroituva.
+Ehdon T1 kohdalla huomaamme että jos joukon $A$ komplementti on numeroituva, tällöin yhdisteen $A \cup B$ komplementti sisältyy joukon $A$ komplementtiin, eli $(A \cup B)^C$ on numeroituva. Mielivaltaisen yhdisteen tapauksessa $\bigcup_{i \in \mathbb{I}} A_i$ voimme valita yhden indeksin $j \in \mathbb{I}$ jolloin $\bigcup_{i \in \mathbb{I}} A_i = A_j \cup\bigcup_{i \in \mathbb{I}} A_i$, eli edeltävän perusteella myös mielivaltaisen yhdisteen komplementti on avoin. Toisaalta ehto T2 toteutuu kun huomaamme että kahden numeroituvan joukon yhdiste on yhä numeroituva, eli kahden joukon leikkauksen komplementti on yhä numeroituva jos molempien alkuperäisten joukkojen komplementti oli numeroituva.
 
 Ehto T3 toteutuu selvästi.
 
-Tutkitaan erityisesti yksikköväliä $\I = [0,1]$. Joukon $\I$ sulkeuma osoittautuu olevan koko avaruus $\X$. Tämän osoittamiseksi teemme vastaoletuksen, eli oletamme että löytyy $x \in \X$ joka ei kuulu joukon $\I$ sulkeumaan. Tällöin pisteellä $x$ on ainakin yksi ympäristö $U \subset \X$ joka ei leikkaa joukkoa $\I$. Tällöin $\I \subset U^C$. Koska tästä seuraisi että $U^C$ on ylinumeroituva, tämä on ristiriita joukon $U$ avoimuuden kanssa, eli vastaoletuksemme oli väärä.
+Tutkitaan erityisesti yksikköväliä $\I = [0,1]$. Joukon $\I$ sulkeuma osoittautuu olevan koko avaruus $\R$. Tämän osoittamiseksi teemme vastaoletuksen, eli oletamme että löytyy $x \in \R$ joka ei kuulu joukon $\I$ sulkeumaan. Tällöin pisteellä $x$ on ainakin yksi ympäristö $U \subset \R$ joka ei leikkaa joukkoa $\I$. Tällöin $\I \subset U^C$. Koska tästä seuraisi että $U^C$ on ylinumeroituva, tämä on ristiriita joukon $U$ avoimuuden kanssa, eli vastaoletuksemme oli väärä.
 
 Toisaalta voimme osoittaa että jos $x \in \R$ ja $x \not\in \I$, mikään joukon $\I$ jono ei suppene kohti pistettä $x$. Teemme jälleen vastaoletuksen, eli että löytyy jono $a$ joukossa $\I$ joka suppenee kohti pistettä $x$.
 
@@ -205,7 +216,7 @@ Täten sulkeuma on merkillisessä avaruudessamme laajempi kuin jonojen suppenemi
 
 \chapter{Verkko}
 
-Suunnattu verkko yleistää verkon käsitettä. Isolta osin verkon määritelmä vastaa jonon määritelmää, joten mainitsemme erikseen mikäli verkon ominaisuus poikkeaa jonosta.
+Suunnattu verkko yleistää jonon käsitettä. Isolta osin verkon määritelmä vastaa jonon määritelmää, joten mainitsemme erikseen mikäli verkon ominaisuus poikkeaa jonosta.
 
 Jono on kuvaus luonnollisilta luvuilta $\N$ kohdeavaruuteen $\X$. Verkko sen sijaan ottaa lähtöavaruudekseen jonkin \emph{suunnatun joukon}. Suunnattu joukko on määritelty seuraavasti:
 
@@ -218,7 +229,7 @@ Jono on kuvaus luonnollisilta luvuilta $\N$ kohdeavaruuteen $\X$. Verkko sen sij
 
 (V3) Jos $a, b \in \X$, tällöin on olemassa $c \in \X$ siten, että $a \verkop c$ ja $b \verkop c$.
 
-Kutsumme paria $(\X, \verkop)$ \emph{suunnatuksi joukoksi}
+Kutsumme paria $(\X, \verkop)$ \emph{suunnatuksi joukoksi}.
 \end{maar}
 
 Ehto V3 erottaa tämän jonon määritelmästä. Toisin kuin luonnollisilla luvuilla, järjestyksemme on vain osittainen. Jos $a, b \in \X$, ei välttämättä päde $a \verkop b$ eikä $b \verkop a$. Ehto V3 kuitenkin antaa meille keinon puhua suppenemisesta liki identtisesti samalla tavoin kuin jonoilla.
@@ -245,7 +256,7 @@ Olkoon $\X$ avaruus, ja $A \subset \X$ tämän avaruuden osajoukko. Jos piste $x
 
 Olkoon $\X$ avaruus, $A \subset \X$ joukko ja $n : \D \to A$ verkko joka suppenee kohti pistettä $x \in \X$. Osoitamme että piste $x$ kuuluu joukon $A$ sulkeumaan.
 
-Olkoon $U \subset \X$ jokin pisteen $x$ ympäristö. Koska verkko $n$ suppenee kohti pistettä $x$, löytyy verkon lähtöavaruuden alkio $d_U$ jolle pätee, mikäli $d_u \verkop d$, tällöin $n(d) \in U$. Täten siis $n(d_U) \in U$, mutta toisaalta myös verkon määritelmän perusteella $n(d_U) \in A$, eli $n(d_U) \in U \cap A \not= \varnothing$
+Olkoon $U \subset \X$ jokin pisteen $x$ ympäristö. Koska verkko $n$ suppenee kohti pistettä $x$, löytyy verkon lähtöavaruuden alkio $d_U$ jolle pätee, mikäli $d_U \verkop d$, tällöin $n(d) \in U$. Täten siis $n(d_U) \in U$, mutta toisaalta myös verkon määritelmän perusteella $n(d_U) \in A$, eli $n(d_U) \in U \cap A \not= \varnothing$
 
 \emph{Suunta $\Rightarrow$}
 
@@ -254,7 +265,7 @@ Olkoon $\X$ avaruus, $A \subset \X$ joukko ja $x \in \overline{A}$ joukon $A$ su
 Määritellään joukko $\D$ seuraavasti:
 
 \begin{equation}
-\D = \{U \cap A \mid U \text{ on pisteen }x\text{ ympäristö}\}
+\D = \{U \cap A \mid U \text{ on pisteen }x\text{ ympäristö}\}\text{.}
 \end{equation}
 
 Koska piste $x$ kuuluu joukon $A$ sulkeumaan, jokainen pisteen $x$ ympäristö leikkaa joukon A, eli jokainen joukon $\D$ alkio on epätyhjä joukko. Voimme siis liittää jokaiseen joukon $\D$ alkioon jonkin pisteen $a_U \in A \cap U$. Voimme siis rakentaa kuvauksen $n : \D \to A, n(U) \in A \cap U$. Emme määrittele funktiota tuon tarkemmin, meille riittää tietää että jokaiselle alkiolle voidaan tämän ehdon toteuttava funktion arvo määrätä.
@@ -266,17 +277,17 @@ Funktio $n : \D \to A$ on siis verkko. Jäljellä on enää osoittaa että $n$ s
 Olkoon $U$ jokin pisteen $x$ ympäristö. Meidän on löydettävä joukon $\D$ alkio $d_U$ jolle pätee
 
 \begin{equation}
-\text{jos } d_U \supset d \text{, tällöin } n(d) \in U
+\text{jos } d_U \supset d \text{, tällöin } n(d) \in U\text{.}
 \end{equation}
 
-Tällainen alkio löytyy muodossa $d_U = A \cap U$. Jos jokin joukon $\D$ alkio $d$ sisältyy alkioon $d_U$, eli pätee $d \supset d_U$, tällöin piste $d$ on muotoa $d = V \cap A$, joten $V \subseteq U$. Täten $n(d) \in V \subset U$. Täten $n$ suppenee kohti pistettä $x$.
+Tällainen alkio löytyy muodossa $d_U = A \cap U$. Jos jokin joukon $\D$ alkio $d$ sisältyy alkioon $d_U$, eli pätee $d_U \supset d$, tällöin piste $d$ on muotoa $d = V \cap A$, joten $V \subset U$. Täten $n(d) \in V \subset U$. Täten verkko $n$ suppenee kohti pistettä $x$.
 
 \begin{thebibliography}{9}
 
 \bibitem{Topo}
 Jussi Väisälä: Topologia II. Limes ry. 2005
 \bibitem{Topo1}
-Jussi Väisälä: Topologia I. Limes ry. 2001
+Jussi Väisälä: Topologia I. Limes ry. 2004
 \bibitem{Kelley}
 J. L. Kelley: General Topology. D. Van Nostrand Company Inc. 1955.
 \end{thebibliography}
