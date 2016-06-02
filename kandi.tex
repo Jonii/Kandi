@@ -56,18 +56,18 @@
 
 \chapter{Johdanto}\label{johd}
 
-Kandissamme haluamme osoittaa metrisissä avaruuksissa sulkeuman karakterisoinnin jonon raja-arvojen avulla yleistyvän yleisiin topologisiin avaruuksiin käyttämällä jonojen sijaan konstruktiota \textbf{suunnattu verkko}. Kandi kuuluu topologian alaan, ja suurimmaksi osaksi sisältyy kurssiin Topologia II.
+Kandidaatintutkielmassamme haluamme osoittaa metrisissä avaruuksissa sulkeuman karakterisoinnin jonon raja-arvojen avulla yleistyvän yleisiin topologisiin avaruuksiin käyttämällä jonojen sijaan konstruktiota \textbf{suunnattu verkko}. Tutkielma kuuluu topologian alaan, ja suurimmaksi osaksi sisältyy kurssiin Topologia II.
 
 Osoitamme aluksi miten metrisessä avaruudessa sulkeuma voidaan karakterisoida jonojen raja-arvojen avulla, ja tämän jälkeen tutkimme ei-metrisen avaruuden tapausta jossa sama tulos ei enää päde. Tämän jälkeen johdamme suunnattuja verkkoja käyttävän tuloksen yleisiin topologisiin avaruuksiin, ja näytämme kuinka tämä määrittely johtaa eri lopputulokseen esimerkkitapauksessamme.
 
 \chapter{Topologia}\label{TOP}
 
-Topologian avulla voidaan puhua avaruuden rakenteesta. Tietyllä tapaa topologia kuvaa sitä, kuinka lähellä tai kaukana pisteet ovat toisistaan.
+Topologian avulla voidaan puhua avaruuden rakenteesta. Tietyllä tapaa topologia kuvaa sitä, kuinka lähellä tai kaukana pisteet tai joukot ovat toisistaan.
 
 \begin{maar}\label{topmaar}
 \emph{Topologia}. Olkoon $\X$ avaruus ja $\T \subset \Pow(\X)$ joukon $\X$ osajoukkojen joukko. Sanomme, että $\T$ on joukon $\X$ \emph{topologia}, mikäli seuraavat ehdot pätevät:
 
-(T1) $\T$ sisältää osajoukkojensa mielivaltaiset yhdisteet
+(T1) $\T$ sisältää alkioidensa mielivaltaiset yhdisteet
 
 (T2) Jos $A,B \in \T$, niin $A \cap B \in \T$
 
@@ -94,34 +94,48 @@ Oletamme tästedes, että $\X$ on topologinen avaruus.
 Joukon $A$ sulkeuma on suljettu, ja sisältyy jokaiseen suljettuun joukkoon joka sisältää joukon $A$. Intuitiivisesti tämä seuraa siitä, että sulkeuman komplementti on yhdiste kaikista avoimista joukoista jotka eivät leikkaa joukkoa $A$.
 
 \begin{maar}\label{kantamaar}
-\emph{Kanta}. Käytännössä voi olla hankala listata jokainen tietyn topologian avoin joukko määritellessä topologiaa. Tämän sijaan usein puhutaan rajatummasta joukosta avoimia joukkoja, jotka yksikäsitteisesti määräävät topologian. Joukko $\B \subset \Pow(\X)$ on topologian \emph{kanta} joukossa $\X$, mikäli seuraavat ehdot pätevät:
+\emph{Kanta}. Käytännössä voi olla hankala listata jokainen tietyn topologian avoin joukko määritellessä topologiaa. Tämän sijaan usein puhutaan rajatummasta joukosta avoimia joukkoja, jotka yksikäsitteisesti määräävät topologian. Olkoon joukko $\X$ avaruus jonka topologian määrittää topologia $\T$. Joukko $\B \subset \Pow(\X)$ on topologian $\T$ \emph{kanta} joukossa $\X$, mikäli seuraavat ehdot pätevät:
 
-(K1) $\bigcup_{B \in \B} B = \X$.
+(1) $\B \subset \T$
 
-(K2) Jos $x \in B_1 \cap B_2$ ja $B_1,B_2\in \B$, tällöin on olemassa $B \in \B$ siten, että $x \in B \subset B_1 \cap B_2$.
+(2) Jokainen $U \in \T, U \not= \varnothing$ voidaan lausua yhdisteenä joistain kannan $\B$ jäsenistä
 \end{maar}
 
-Joukko $U \subset \X$ on avoin kannan $\B$ määräämässä topologiassa jos ja vain jos $U$ on jokin yhdiste kannan alkioista.
+Toisin sanoen, epätyhjä joukko $U \subset \X$ on avoin topologiassa $\T$ jos ja vain jos $U$ on yhdiste kannan alkioista. Kanta ei ole yksikäsitteinen, samalle topologialle voidaan löytää useita kantoja.
+
+\begin{lause}\label{kantalause}
+\emph{Kantalause}. \cite{Topo} Lause 2.9. Olkoon $\X$ joukko, ja $\B \subset \Pow(\X)$. $\B$ on tällöin jonkin topologian kanta, jos ja vain jos seuraavat ehdot pätevät:
+
+(K1) $\B$ on joukon $\X$ peite.
+
+(K2) Jos $B_1, B_2 \in \B$, ja jos $x \in B_1 \cap B_2$, niin on olemassa $B \in \B$ siten, että $x \in B \subset B_1 \cap B_2$.
+\end{lause}.
+
+Lause löytyy todistettuna kirjasta Topologia II\cite{Topo}.
 
 \chapter{Metrinen avaruus}\label{MET}
 
-Metrisen avaruuden keskeinen käsite on metriikka, joka pyrkii formalisoimaan etäisyyden käsitteen. Kandin aiheen kannalta erityisen huomionarvoista on se, että metriikka indusoi avaruudelle topologian, ja metriikan indusoimilla topologioilla on monia hyödyllisiä erityisominaisuuksia.
+Metrisen avaruuden keskeinen käsite on metriikka, joka pyrkii formalisoimaan etäisyyden käsitteen. Kandidaatintutkielman aiheen kannalta erityisen huomionarvoista on se, että metriikka indusoi avaruudelle topologian, ja metriikan indusoimilla topologioilla on monia hyödyllisiä erityisominaisuuksia.
 
 \begin{maar}\label{metmaar}
 \emph{Metriikka}. Joukossa $\X$ määritelty funktio $d : \X \times \X \to \R$ on \emph{metriikka} joukossa $X$, jos pätee
 
 (M1) Kaikilla $a, b \in \X$ pätee $d(a,b) \geq 0$.
 
-(M2) $d(a,b) = 0$ jos ja vain jos $a = b$.
+(M2) Kaikilla $a, b \in \X$ pätee $d(a,b) = d(b,a)$
 
-(M3) (Kolmioepäyhtälö) Kaikilla $a, b, c \in \X$ pätee $d(a,c) \leq d(a,b) + d(b,c)$.
+(M3) $d(a,b) = 0$ jos ja vain jos $a = b$.
+
+(M4) (Kolmioepäyhtälö) Kaikilla $a, b, c \in \X$ pätee $d(a,c) \leq d(a,b) + d(b,c)$.
 \end{maar}
 
 \begin{maar}\label{pallomar}
 \emph{Palloympäristö}. Pisteen $x \in \X$ $r$-säteinen \emph{palloympäristö} on joukko $B(x,r) = \{ y \in \X \mid d(x, y) < r \}$.
 \end{maar}
 
-Metriselle avaruudelle on hyvin luonnollista määrätä topologia käyttämällä kantana avaruuden eri palloympäristöjä. Jos siis $\X$ on metrinen avaruus, sen kannaksi valitaan $\B = \{ B(x,r) \mid x \in \X, r \in \R \}$. Kutsumme kannan $\B$ määräämää topologiaa nyt \emph{metriikan indusoimaksi topologiaksi} joukossa $\X$.
+Metriselle avaruudelle on hyvin luonnollista määrätä topologia käyttämällä kantana avaruuden eri palloympäristöjä. Jos siis $\X$ on metrinen avaruus, sen kannaksi valitaan $\B = \{ B(x,r) \mid x \in \X, r \in \R_{> 0} \}$. Kutsumme kannan $\B$ määräämää topologiaa nyt \emph{metriikan indusoimaksi topologiaksi} joukossa $\X$.
+
+Emme todista että tämä määrää topologian, mutta todistus on mahdollista muotoilla melko suoraviivaisesti kantalausetta\ref{kantalause} käyttämällä.
 
 \chapter{Sulkeuman karakterisointi jonojen avulla}
 
@@ -131,11 +145,11 @@ Palautetaan ensin mieleen jonon määritelmä. Sanomme, että kuvaus $x : \N \to
 \emph{Jonon suppeneminen}. Olkoon $\X$ topologinen avaruus, ja olkoon $a$ jono avaruudessa $\X$. Sanomme, että jono \emph{suppenee} kohti pistettä $x$, mikäli jokaista pisteen $x$ ympäristöä $U \subset \X$ kohti voidaan valita jonon $a$ indeksi $n_U$ siten, että kaikilla $n > n_U$ pätee $a_n \in U$. Tiettyjen ehtojen pätiessä avaruuden jono voi supeta vain yhtä pistettä kohti. Tällöin jos jono suppenee kohti pistettä $x$, voimme sanoa että $x$ on jonon \emph{raja-arvo}.
 \end{maar}
 
-Todistamatta mainitsemme että metrisessä avaruudessa jono voi supeta vain yhtä pistettä kohti.
+Todistamatta mainitsemme että metrisessä avaruudessa jono voi supeta vain yhtä pistettä kohti. Tämä on todistettu esimerkiksi kirjassa Topologia I\cite{Topo1}.
 
 
 \begin{lause}
-Olkoon $A \subset \X$ joukko. Tällöin pätee
+Olkoon $\X$ metrinen avaruus, ja $A \subset \X$ joukko. Tällöin pätee
 \begin{equation}
 \overline{A} = \{x \in \X \mid \text{Löytyy jono } n : N \to A \text{ joka suppenee kohti pistettä } x\}
 \end{equation}
@@ -146,9 +160,13 @@ Toisin sanoen, joukon jonojen raja-arvojen joukko on sama, kuin joukon sulkeuma.
 
 \emph{Kohta 1}. Osoitetaan, että jos jono $a : \N \to A$ suppenee kohti pistettä $x \in \X$, piste $x$ kuuluu joukon $A$ sulkeumaan.
 
-Sulkeuman määritelmän perusteella riittää osoittaa että jokaiselle pisteen $x$ ympäristölle $U \subset \X$ pätee, että $U \cap A \not= \varnothing$.
+Sulkeuman määritelmän perusteella väite on yhtäpitävä sen kanssa, että osoitamme jokaisen pisteen $x$ ympäristölle $U \subset \X$ pätevän, että $U \cap A \not= \varnothing$.
 
-TODO
+Olkoon $U$ jokin pisteen $x$ ympäristö. Koska jono $a$ suppenee kohti pistettä $x$, jostain indeksistä $n_U$ lähtien jonon arvot sisältyvät joukkoon $U$, ja erityisesti pätee $a_{n_U} \in U$. Koska $a_{n_U} \in A$, tällöin $a_{n_U} \in A \cap U$, eli $A \cap U \not= \varnothing$.
+
+\emph{Kohta 2}. Osoitetaan, että jos piste $x$ kuuluu joukon $A$ sulkeumaan, löytyy jono $a : \N \to A$ joka suppenee kohti pistettä $x$.
+
+
 
 \chapter{Erikoinen ei-metrinen avaruus}
 Aiemmin huomasimme että metrisessä avaruudessa jonon raja-arvojen avulla voidaan määrittää sulkeuma. Nyt tutkimme ei-metristä avaruutta jossa tämä karakterisointi ei päde.
@@ -223,20 +241,20 @@ Olkoon $\X$ avaruus, ja $A \subset \X$ tämän avaruuden osajoukko. Jos piste $x
 
 \noindent\emph{Todistus}.
 
-\emph{Suunta $\leftarrow$}
+\emph{Suunta $\Leftarrow$}
 
-Olkoon $\X$ avaruus, $A \subset \X$ joukko ja $n : \D -> A$ verkko joka suppenee kohti pistettä $x \in \X$. Osoitamme että piste $x$ kuuluu joukon $A$ sulkeumaan.
+Olkoon $\X$ avaruus, $A \subset \X$ joukko ja $n : \D \to A$ verkko joka suppenee kohti pistettä $x \in \X$. Osoitamme että piste $x$ kuuluu joukon $A$ sulkeumaan.
 
 Olkoon $U \subset \X$ jokin pisteen $x$ ympäristö. Koska verkko $n$ suppenee kohti pistettä $x$, löytyy verkon lähtöavaruuden alkio $d_U$ jolle pätee, mikäli $d_u \verkop d$, tällöin $n(d) \in U$. Täten siis $n(d_U) \in U$, mutta toisaalta myös verkon määritelmän perusteella $n(d_U) \in A$, eli $n(d_U) \in U \cap A \not= \varnothing$
 
-\emph{Suunta $\to$}
+\emph{Suunta $\Rightarrow$}
 
 Olkoon $\X$ avaruus, $A \subset \X$ joukko ja $x \in \overline{A}$ joukon $A$ sulkeuman piste. Osoitamme että löytyy verkko $n : \D \to A$ joka suppenee kohti pistettä $x$.
 
 Määritellään joukko $\D$ seuraavasti:
 
 \begin{equation}
-\D = \{U \cap A \mid U \text{ on pisteen x ympäristö}\}
+\D = \{U \cap A \mid U \text{ on pisteen }x\text{ ympäristö}\}
 \end{equation}
 
 Koska piste $x$ kuuluu joukon $A$ sulkeumaan, jokainen pisteen $x$ ympäristö leikkaa joukon A, eli jokainen joukon $\D$ alkio on epätyhjä joukko. Voimme siis liittää jokaiseen joukon $\D$ alkioon jonkin pisteen $a_U \in A \cap U$. Voimme siis rakentaa kuvauksen $n : \D \to A, n(U) \in A \cap U$. Emme määrittele funktiota tuon tarkemmin, meille riittää tietää että jokaiselle alkiolle voidaan tämän ehdon toteuttava funktion arvo määrätä.
@@ -256,7 +274,11 @@ Tällainen alkio löytyy muodossa $d_U = A \cap U$. Jos jokin joukon $\D$ alkio 
 \begin{thebibliography}{9}
 
 \bibitem{Topo}
-Jussi Väisälä: Topologia II
+Jussi Väisälä: Topologia II. Limes ry. 2005
+\bibitem{Topo1}
+Jussi Väisälä: Topologia I. Limes ry. 2001
+\bibitem{Kelley}
+J. L. Kelley: General Topology. D. Van Nostrand Company Inc. 1955.
 \end{thebibliography}
 
 \end{document}
