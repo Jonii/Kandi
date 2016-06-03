@@ -143,7 +143,7 @@ Palautetaan ensin mieleen jonon määritelmä. Sanomme, että kuvaus $x : \N \to
 \emph{Jonon suppeneminen}. Olkoon $\X$ topologinen avaruus, ja olkoon $a$ jono avaruudessa $\X$. Sanomme, että jono $a$ \emph{suppenee} kohti pistettä $x$, mikäli jokaista pisteen $x$ ympäristöä $U \subset \X$ kohti voidaan valita jonon $a$ indeksi $n_U$ siten, että kaikilla $n > n_U$ pätee $a_n \in U$. Tiettyjen ehtojen pätiessä avaruuden jono voi supeta vain yhtä pistettä kohti. Tällöin jos jono suppenee kohti pistettä $x$, voimme sanoa että $x$ on jonon \emph{raja-arvo}.
 \end{maar}
 
-Todistamatta mainitsemme että metrisessä avaruudessa jono voi supeta vain yhtä pistettä kohti. Tämä on todistettu esimerkiksi kirjassa Topologia I \cite{Topo1}.
+Todistamatta mainitsemme että metrisessä avaruudessa jono voi supeta vain yhtä pistettä kohti. Tämä on todistettu esimerkiksi kirjassa Topologia I \cite{Topo1} lause 11.4.
 
 \begin{lause}
 Olkoon $\X$ metrinen avaruus, ja $A \subset \X$ joukko. Tällöin pätee
@@ -266,7 +266,7 @@ Määritellään joukko $\D$ seuraavasti:
 \D = \{U \cap A \mid U \text{ on pisteen }x\text{ ympäristö}\}\text{.}
 \end{equation}
 
-Koska piste $x$ kuuluu joukon $A$ sulkeumaan, jokainen pisteen $x$ ympäristö leikkaa joukon A, eli jokainen joukon $\D$ alkio on epätyhjä joukko. Voimme siis liittää jokaiseen joukon $\D$ alkioon jonkin pisteen $a_U \in A \cap U$. Voimme siis rakentaa kuvauksen $n : \D \to A, n(U) \in A \cap U$. Emme määrittele funktiota tuon tarkemmin, meille riittää tietää että jokaiselle alkiolle voidaan tämän ehdon toteuttava funktion arvo määrätä.
+Koska piste $x$ kuuluu joukon $A$ sulkeumaan, jokainen pisteen $x$ ympäristö leikkaa joukon A, eli jokainen joukon $\D$ alkio on epätyhjä joukko. Voimme siis liittää jokaiseen pisteen $x$ ympäristöön $U$ jonkin pisteen $a_U \in A \cap U$. Voimme siis rakentaa kuvauksen $n : \D \to A$, $n(U) \in A \cap U$. Emme määrittele funktiota tuon tarkemmin, meille riittää tietää että jokaiselle alkiolle voidaan tämän ehdon toteuttava funktion arvo määrätä.
 
 Nyt voimme suunnata joukon $\D$ relaatiolla $\supset$. Relaatio $\supset$ tunnetusti toteuttaa transitiivisuuden ja refleksiivisuyyden, eli ehdot V1 ja V2. Ehden V3 toteutumiseksi huomaamme, että mikäli valitsemme kaksi mielivaltaista avaruuden $\D$ jäsentä $D_1, D_2 \in \D$, tällöin $D_n$ on muotoa $A \cap U_n$, jossa $U_n$ on pisteen $x$ ympäristö. Topologian määritelmän ehdon T2 mukaan siis leikkaus $U_1 \cap U_2 =: U$ on myös avoin joukko. Toisaalta koska joukko $U$ sisältää pisteen $x$, on $U$ myös pisteen $x$ ympäristö, eli $A \cap U$ sisältyy joukkoon $\D$. Toisaalta $D_1 = U_1 \cap A \supset U \cap A$ ja $D_2 = U_2 \cap A \supset U \cap A$. Täten joukon $\D$ alkio $U \cap A$ toteuttaa ehtomme.
 
@@ -285,7 +285,7 @@ Tällainen alkio löytyy muodossa $d_U = A \cap U$. Jos jokin joukon $\D$ alkio 
 \bibitem{Topo}
 Jussi Väisälä: Topologia II. Limes ry. 2005
 \bibitem{Topo1}
-Jussi Väisälä: Topologia I. Limes ry. 2004
+Jussi Väisälä: Topologia I. Limes ry. 2007
 \bibitem{Kelley}
 J. L. Kelley: General Topology. D. Van Nostrand Company Inc. 1955.
 \end{thebibliography}
