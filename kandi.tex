@@ -157,13 +157,13 @@ Toisin sanoen, joukon jonojen raja-arvojen joukko on sama, kuin joukon sulkeuma.
 
 \emph{Kohta 1}. Osoitetaan, että jos jono $a : \N \to A$ suppenee kohti pistettä $x \in \X$, piste $x$ kuuluu joukon $A$ sulkeumaan.
 
-Sulkeuman määritelmän perusteella väite on yhtäpitävä sen kanssa, että osoitamme jokaisen pisteen $x$ ympäristölle $U \subset \X$ pätevän, että $U \cap A \not= \varnothing$.
+Sulkeuman määritelmän perusteella väite on yhtäpitävä sen kanssa, että osoitamme jokaiselle pisteen $x$ ympäristölle $U \subset \X$ pätevän, että $U \cap A \not= \varnothing$.
 
 Olkoon $U$ jokin pisteen $x$ ympäristö. Koska jono $a$ suppenee kohti pistettä $x$, jostain indeksistä $n_U$ lähtien jonon arvot sisältyvät joukkoon $U$, ja erityisesti pätee $a_{n_U} \in U$. Koska $a_{n_U} \in A$, tällöin $a_{n_U} \in A \cap U$, eli $A \cap U \not= \varnothing$.
 
 \emph{Kohta 2}. Osoitetaan, että jos piste $x$ kuuluu joukon $A$ sulkeumaan, löytyy jono $a : \N \to A$ joka suppenee kohti pistettä $x$.
 
-Valitaan jono $a$ siten, että $a_n \in A \cap B(x, 2^-n)$, eli jokainen alkio kuuluu $2^-n$-säteisen pisteen $x$ palloympäristön, ja joukon $A$ leikkaukseen. Koska jokainen edellä kuvatunlainen palloympäristö kuuluu topologian kantaan ja on täten avoin, ja toisaalta koska piste $x$ kuuluu joukon $A$ sulkeumaan, on jokainen leikkaus epätyhjä, eli valinta voidaan tehdä.
+Valitaan jono $a$ siten, että $a_n \in A \cap B(x, 2^{-n})$, eli alkio $a_n$ kuuluu $2^{-n}$-säteisen pisteen $x$ palloympäristön, ja joukon $A$ leikkaukseen. Koska jokainen edellä kuvatunlainen palloympäristö kuuluu topologian kantaan ja on täten avoin, ja toisaalta koska piste $x$ kuuluu joukon $A$ sulkeumaan, on jokainen leikkaus epätyhjä, eli valinta voidaan tehdä.
 
 Olkoon joukko $U \subset \X$ jokin pisteen $x$ ympäristö. Koska topologian $\T$ kanta on palloympäristöjen joukko, voidaan joukko $U$ lausua näiden kannan alkioiden yhdisteenä, ja siis löytyy jokin kannan alkio, palloympäristö $B(y,r)$ joka sisältää pisteen $x$ ja sisältyy joukkoon $U$, eli $x \in B \subset U$.
 
@@ -173,9 +173,9 @@ Koska $d(x,y) < r$, löytyy luku $\epsilon \in \R$ jolle pätee $d(x,y) + \epsil
 d(y,z) < d(y,x) + d(x,z) < d(y,x) + \epsilon < r\text{.}
 \end{equation}
 
-eli piste $z$ sisältyy palloympäristöön $B(y,r)$. Edeltävässä yhtälössä ensimmäisessä epäyhtälössä käytimme kolmioepäyhtälöä, toisessa tietoa siitä, että $z \in B(x,\epsilon)$.
+Täten piste $z$ sisältyy palloympäristöön $B(y,r)$. Edeltävässä yhtälössä ensimmäisessä epäyhtälössä käytimme kolmioepäyhtälöä, toisessa tietoa siitä, että $z \in B(x,\epsilon)$. Täten pätee $B(x, \epsilon) \subset B(y,r)$.
 
-Toisaalta, koska joukon palloympäristön $B^* = \{z \in \X \mid d(z,y) < r\}$ säde $r$ on positiivinen reaaliluku, voidaan valita tämän ja pisteen $0$ väliltä jokin muotoa $2^-n$ oleva luku. Tällöin $a_n$ ja jokainen tätä seuraava jonon alkio sisältyy joukkoon $B$, eli jos $m > n$, pätee $a_m \in B \subset U$. Koska joukko $U$ oli valittu mielivaltaisesti, olemme nyt osoittaneet että jono $a$ saavuttaa ennenpitkää jokaisen pisteen $x$ ympäristön.
+Toisaalta, koska joukon palloympäristön $B^* = \{z \in \X \mid d(z,y) < \epsilon\}$ säde $\epsilon$ on positiivinen reaaliluku, voidaan valita tämän ja pisteen $0$ väliltä jokin muotoa $2^{-n}$ oleva luku. Tällöin $a_n$ ja jokainen tätä seuraava jonon alkio sisältyy joukkoon $B^*$, eli jos $m > n$, pätee $a_m \in B^* \subset B \subset U$. Koska joukko $U$ oli valittu mielivaltaisesti, olemme nyt osoittaneet että jono $a$ saavuttaa ennenpitkää jokaisen pisteen $x$ ympäristön.
 
 \chapter{Erikoinen ei-metrinen avaruus}
 Aiemmin huomasimme että metrisessä avaruudessa jonon raja-arvojen avulla voidaan määrittää sulkeuma. Nyt tutkimme ei-metristä avaruutta jossa tämä karakterisointi ei päde.
