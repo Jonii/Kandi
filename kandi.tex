@@ -44,9 +44,9 @@
 \addtolength{\voffset}{0.45cm}
 \addtolength{\textheight}{-0.9cm}
 
-\title{Kandi}
+\title{Sulkeuman karakterisointi verkon suppenemisen avulla}
 \author{Joni Hanski}
-\date{2.6.2016}
+\date{6.6.2016}
 
 \begin{document}
 
@@ -104,7 +104,7 @@ Joukon $A$ sulkeuma on suljettu, ja sisältyy jokaiseen suljettuun joukkoon joka
 Toisin sanoen, epätyhjä joukko $U \subset \X$ on avoin topologiassa $\T$ jos ja vain jos $U$ on yhdiste kannan alkioista. Kanta ei ole yksikäsitteinen, samalle topologialle voidaan löytää useita kantoja.
 
 \begin{lause}\label{kantalause}
-\emph{Kantalause. Topologia II \cite{Topo} Lause 2.9}. Olkoon $\X$ joukko, ja $\B \subset \Pow(\X)$. $\B$ on tällöin jonkin topologian kanta, jos ja vain jos seuraavat ehdot pätevät:
+\emph{Kantalause. Topologia II \cite{Topo} Lause 2.9}. Olkoon $\X$ joukko, ja $\B \subset \Pow(\X)$. Kokoelma $\B$ on tällöin jonkin topologian kanta, jos ja vain jos seuraavat ehdot pätevät:
 
 (K1) $\B$ on joukon $\X$ peite,
 
@@ -165,7 +165,7 @@ Olkoon $U$ jokin pisteen $x$ ympäristö. Koska jono $a$ suppenee kohti pistett�
 
 Valitaan jono $a$ siten, että $a_n \in A \cap B(x, 2^{-n})$, eli alkio $a_n$ kuuluu $2^{-n}$-säteisen pisteen $x$ palloympäristön, ja joukon $A$ leikkaukseen. Koska jokainen edellä kuvatunlainen palloympäristö kuuluu topologian kantaan ja on täten avoin, ja toisaalta koska piste $x$ kuuluu joukon $A$ sulkeumaan, on jokainen leikkaus epätyhjä, eli valinta voidaan tehdä.
 
-Olkoon joukko $U \subset \X$ jokin pisteen $x$ ympäristö. Koska topologian $\T$ kanta on palloympäristöjen joukko, voidaan joukko $U$ lausua näiden kannan alkioiden yhdisteenä, ja siis löytyy jokin kannan alkio, palloympäristö $B(y,r)$ joka sisältää pisteen $x$ ja sisältyy joukkoon $U$, eli $x \in B \subset U$.
+Olkoon joukko $U \subset \X$ jokin pisteen $x$ ympäristö. Koska topologian $\T$ kanta on palloympäristöjen joukko, voidaan joukko $U$ lausua näiden kannan alkioiden yhdisteenä, ja siis löytyy jokin kannan alkio, palloympäristö $B := B(y,r)$ joka sisältää pisteen $x$ ja sisältyy joukkoon $U$, eli $x \in B \subset U$.
 
 Koska $d(x,y) < r$, löytyy luku $\epsilon \in \R$ jolle pätee $d(x,y) + \epsilon < r$, ja täten voimme kolmioepäyhtälön avulla osoittaa että palloympäristö $B^* := B(x,\epsilon)$ sisältyy palloympäristöön $B(y,r)$. Jos piste $z$ sisältyy palloympäristöön $B(x,\epsilon)$, tällöin kolmioepäyhtälön avulla saamme
 
@@ -175,7 +175,7 @@ d(y,z) < d(y,x) + d(x,z) < d(y,x) + \epsilon < r\text{.}
 
 Täten piste $z$ sisältyy palloympäristöön $B(y,r)$. Edeltävässä yhtälössä ensimmäisessä epäyhtälössä käytimme kolmioepäyhtälöä, toisessa tietoa siitä, että $z \in B(x,\epsilon)$. Täten pätee $B(x, \epsilon) \subset B(y,r)$.
 
-Toisaalta, koska joukon palloympäristön $B^* = \{z \in \X \mid d(z,y) < \epsilon\}$ säde $\epsilon$ on positiivinen reaaliluku, voidaan valita tämän ja pisteen $0$ väliltä jokin muotoa $2^{-n}$ oleva luku. Tällöin $a_n$ ja jokainen tätä seuraava jonon alkio sisältyy joukkoon $B^*$, eli jos $m > n$, pätee $a_m \in B^* \subset B \subset U$. Koska joukko $U$ oli valittu mielivaltaisesti, olemme nyt osoittaneet että jono $a$ saavuttaa ennenpitkää jokaisen pisteen $x$ ympäristön.
+Toisaalta, koska joukon palloympäristön $B^* = \{z \in \X \mid d(x,z) < \epsilon\}$ säde $\epsilon$ on positiivinen reaaliluku, voidaan valita tämän ja pisteen $0$ väliltä jokin muotoa $2^{-n}$ oleva luku. Tällöin $a_n$ ja jokainen tätä seuraava jonon alkio sisältyy joukkoon $B^*$, eli jos $m > n$, pätee $a_m \in B^* \subset B \subset U$. Koska joukko $U$ oli valittu mielivaltaisesti, olemme nyt osoittaneet että jono $a$ saavuttaa ennenpitkää jokaisen pisteen $x$ ympäristön.
 
 \chapter{Erikoinen ei-metrinen avaruus}
 Aiemmin huomasimme että metrisessä avaruudessa jonon raja-arvojen avulla voidaan määrittää sulkeuma. Nyt tutkimme ei-metristä avaruutta jossa tämä karakterisointi ei päde.
@@ -195,7 +195,7 @@ Ehdot T1 ja T2 voidaan osoittaa De Morganin laeilla, eli
 (A \cup B)^C &= A^C \cap B^C
 \end{align}
 
-Ehdon T1 kohdalla huomaamme että jos joukon $A$ komplementti on numeroituva, tällöin yhdisteen $A \cup B$ komplementti sisältyy joukon $A$ komplementtiin, eli $(A \cup B)^C$ on numeroituva. Mielivaltaisen yhdisteen tapauksessa $\bigcup_{i \in \mathbb{I}} A_i$ voimme valita yhden indeksin $j \in \mathbb{I}$ jolloin $\bigcup_{i \in \mathbb{I}} A_i = A_j \cup\bigcup_{i \in \mathbb{I}} A_i$, eli edeltävän perusteella myös mielivaltaisen yhdisteen komplementti on avoin. Toisaalta ehto T2 toteutuu kun huomaamme että kahden numeroituvan joukon yhdiste on yhä numeroituva, eli kahden joukon leikkauksen komplementti on yhä numeroituva jos molempien alkuperäisten joukkojen komplementti oli numeroituva.
+Ehdon T1 kohdalla huomaamme että jos joukon $A$ komplementti on numeroituva, tällöin yhdisteen $A \cup B$ komplementti sisältyy joukon $A$ komplementtiin, eli $(A \cup B)^C$ on numeroituva. Mielivaltaisen yhdisteen tapauksessa $\bigcup_{i \in \mathbb{I}} A_i$ voimme valita yhden indeksin $j \in \mathbb{I}$ jolloin $\bigcup_{i \in \mathbb{I}} A_i = A_j \cup\bigcup_{i \in \mathbb{I}} A_i$, eli edeltävän perusteella myös mielivaltaisen yhdisteen komplementti on numeroituva. Toisaalta ehto T2 toteutuu kun huomaamme että kahden numeroituvan joukon yhdiste on yhä numeroituva, eli kahden joukon leikkauksen komplementti on yhä numeroituva jos molempien alkuperäisten joukkojen komplementti oli numeroituva.
 
 Ehto T3 toteutuu selvästi.
 
